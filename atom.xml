@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Blog]]></title>
+  <link href="http://emrullah-arsay.github.io/atom.xml" rel="self"/>
+  <link href="http://emrullah-arsay.github.io/"/>
+  <updated>2016-07-30T12:49:21+03:00</updated>
+  <id>http://emrullah-arsay.github.io/</id>
+  <author>
+    <name><![CDATA[emrullah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[First Post]]></title>
+    <link href="http://emrullah-arsay.github.io/blog/2016/07/30/first-post/"/>
+    <updated>2016-07-30T12:40:36+03:00</updated>
+    <id>http://emrullah-arsay.github.io/blog/2016/07/30/first-post</id>
+    <content type="html"><![CDATA[<p>This is the Post.What did u expect??</p>
+]]></content>
+  </entry>
+  
+</feed>
