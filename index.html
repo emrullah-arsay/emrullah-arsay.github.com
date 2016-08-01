@@ -9,7 +9,7 @@
   <meta name="author" content="emrullah">
 
   
-  <meta name="description" content="When I heard the workshop for the first time i thought it will be a few simple classes and some simple code samples and that's all.But that was not &hellip;">
+  <meta name="description" content="We start to second day with simple html lessons.As all we know Html is a markup language using for websites.It stands for HyperText Markup Language &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -38,7 +38,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">emrullah</a></h1>
   
-    <h2>I can Blog</h2>
+    <h2>We can blog</h2>
   
 </hgroup>
 
@@ -65,6 +65,734 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/08/01/second-day-at-workshop/">Second Day at Workshop</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-08-01T03:29:50+03:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2016</span></span> <span class='time'>3:29 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>     We start to second day with simple html lessons.As all we know Html is a markup language using for websites.It stands for HyperText Markup Language and it is a milestone for  web pages because everything in the internet uses this language.All other languages or tools you know like php, .net, rails are just a tool for transforming our code to HTML.because of that knowing html is most important thing for a web developper.After we finish talking about html we passed on another tool we use in rails environment to transform our code to html.It is a gem called Haml.  
+</p>
+
+
+<p>     Haml is a templating engine that makes you write html easily.It eliminates unnecessary tag system
+and uses indentation to  tidy up your code.By removing the unnecessary tags it makes your code cleaner 
+and easy to understand.
+</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>%nav.navbar.navbar-default
+</span><span class='line'>        .container-fluid
+</span><span class='line'>          / Brand and toggle get grouped for better mobile display
+</span><span class='line'>          .navbar-header
+</span><span class='line'>            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+</span><span class='line'>              %span.sr-only Toggle navigation
+</span><span class='line'>              %span.icon-bar
+</span><span class='line'>              %span.icon-bar
+</span><span class='line'>              %span.icon-bar
+</span><span class='line'>           = link_to 'Blog', root_path, class: 'navbar-brand'</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>     Here is some  haml example code we write in class.We try to write a navigation bar for our blog website.As you can see tagnames didnt change.We just used different characters to write the tags.
+</p>
+
+
+<p> Css was the other subject we mentioned that day.As you know css is the other important part of web developing along with JavaScript.Css stands for cascading style sheets and often used to set the visual stle of webpages and styling the pages.
+</p>
+
+
+<p> In class we find opportunity to practice our css skills.Ms. Kapi told us to create a html buuton without using bootsrap.The example code what we do is given down below.
+</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.btn {
+</span><span class='line'>        border-radius: 28px;
+</span><span class='line'>        font-family: Arial;
+</span><span class='line'>        color: #ffffff;
+</span><span class='line'>        font-size: 20px;
+</span><span class='line'>        background: #d91a1a;
+</span><span class='line'>        padding: 10px 20px 10px 20px;
+</span><span class='line'>        text-decoration: none;
+</span><span class='line'>      }</span></code></pre></td></tr></table></div></figure>
+
+
+<p> After these small assignments we pass on the other subjects like bootstrap and sass.We mentioned about how it import to use css and bootstrap files.How we change the extensions of the files.That's what I'm ganno talk about now.Befor using Css or bootstrap we have to import the css file we're workin on the application.css file.Regardin the tool what we use we have to change the extebsion of the files including the application.css file.If we're going to use pure bootstrap and css we change it to style.css.scss.If we're going to use sass we change it the extension to style.css.sass  
+</p>
+
+
+<h4>Sass</h4>
+
+
+<p> So the sass is another tool for styling web pages and interpret into css.It stands for Syntactically Awesome Stylesheets.The official implementation of Sass is open-source and coded in Ruby; however, other implementations exist, including PHP, and a high-performance implementation in C called libSass.  
+</p>
+
+
+<p> Best things about sass are the mechanisms that it provides us.First of all you can write cleaner css code in sass.It also gets rid of the unnecessary  characters and leaves easier and cleaner code. 
+</p>
+
+
+<p>This is how it looks a simple css code:</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.content-navigation {
+</span><span class='line'>  border-color: #3bbfce;
+</span><span class='line'>  color: darken(#3bbfce, 10%);
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>.border {
+</span><span class='line'>  padding:  16px ;
+</span><span class='line'>  margin:  16px;
+</span><span class='line'>  border-color: #3bbfce;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is the sass version the same code:</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.content-navigation 
+</span><span class='line'>  border-color: #3bbfce;
+</span><span class='line'>  color: darken(#3bbfce, 10%);
+</span><span class='line'>
+</span><span class='line'>.border
+</span><span class='line'>  padding:  16px ;
+</span><span class='line'>  margin:  16px;
+</span><span class='line'>  border-color: #3bbfce;</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Variables</h5>
+
+
+<p> Unlike the css, sass has the ability to store information within your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse.Sass uses the $ symbol to make something a variable. Here's an example:
+</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$font-stack:    Helvetica, sans-serif;
+</span><span class='line'>$primary-color: #333;
+</span><span class='line'>
+</span><span class='line'>body 
+</span><span class='line'>  font: 100% $font-stack;
+</span><span class='line'>  color: $primary-color;</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Nesting</h4>
+
+
+<p> Like haml and html codes, sass lets you nest the objects within each other so you dont have to use 
+unique ids and classes.It allows you to design every object differenly even the same kind of objects.  
+</p>
+
+
+<p>In sass style your code would look like this</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>table.hl 
+</span><span class='line'>  margin: 2em 0
+</span><span class='line'>  td.ln 
+</span><span class='line'>    text-align: right
+</span><span class='line'>  
+</span><span class='line'>li 
+</span><span class='line'>  font: 
+</span><span class='line'>    family: serif
+</span><span class='line'>    weight: bold
+</span><span class='line'>    size: 1.3em</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But in css style:</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>table.hl {
+</span><span class='line'>  margin: 2em 0;
+</span><span class='line'>}
+</span><span class='line'>table.hl td.ln {
+</span><span class='line'>  text-align: right;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>li {
+</span><span class='line'>  font-family: serif;
+</span><span class='line'>  font-weight: bold;
+</span><span class='line'>  font-size: 1.3em;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Mixins</h4>
+
+
+<p> In CSS any repeating code in your stylesheet must must written over and over again.Another awesom mechanism that Sass gave us is mixins.You can store your repeated codes in mixins and when you are using it you can use just the mixins names.Just like the functions, you can even pass some parameters in your mixins to mame your mixins more flexible.Here's an example for border-radius.</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>=border-radius($radius)
+</span><span class='line'>  -webkit-border-radius: $radius
+</span><span class='line'>  -moz-border-radius:    $radius
+</span><span class='line'>  -ms-border-radius:     $radius
+</span><span class='line'>  border-radius:         $radius
+</span><span class='line'>
+</span><span class='line'>.box
+</span><span class='line'>  +border-radius(10px)</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Inheritance</h4>
+
+
+<p>In Sass, inheritance is achieved by inserting a line inside of a code block that uses the @extend keyword and references another selector. The extended selector's attributes are applied to the calling selector.</p>
+
+
+<p>Here is an example of how we can use extend keyword:</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.error
+</span><span class='line'>  border: 1px #f00
+</span><span class='line'>  background: #fdd
+</span><span class='line'>
+</span><span class='line'>.error.intrusion 
+</span><span class='line'>  font-size: 1.3em
+</span><span class='line'>  font-weight: bold
+</span><span class='line'>
+</span><span class='line'>.badError 
+</span><span class='line'>  @extend .error
+</span><span class='line'>  border-width: 3px</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This code would look like this in classic CSS style</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.error, .badError {
+</span><span class='line'>  border: 1px #f00;
+</span><span class='line'>  background: #fdd;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>.error.intrusion,
+</span><span class='line'>.badError.intrusion {
+</span><span class='line'>  font-size: 1.3em;
+</span><span class='line'>  font-weight: bold;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>.badError {
+</span><span class='line'>  border-width: 3px;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<h3>Compass</h3>
+
+
+<p>Compass is an open-source CSS authoring framework that supports sass make writing stylesheets powerful and easy.Compass also allows you to get rid of unnecassary repetitions in your style sheet with sass it gives you more powerful ann cleaner code structure.</p>
+
+
+<p>Here is some some sass code with compass:</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@import compass/css3
+</span><span class='line'> 
+</span><span class='line'>@import compass/utilities
+</span><span class='line'> 
+</span><span class='line'>#demo
+</span><span class='line'>  +clearfix
+</span><span class='line'> 
+</span><span class='line'>.border-radius-example
+</span><span class='line'>  width: 125px
+</span><span class='line'>  height: 125px
+</span><span class='line'>  background: red
+</span><span class='line'>  margin: 20px
+</span><span class='line'>  float: left
+</span><span class='line'>  padding: 5px
+</span><span class='line'> 
+</span><span class='line'>#border-radius
+</span><span class='line'>  +border-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-top-left
+</span><span class='line'>  +border-top-left-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-top-right
+</span><span class='line'>  +border-top-right-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-bottom-left
+</span><span class='line'>  +border-bottom-left-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-bottom-right
+</span><span class='line'>  +border-bottom-right-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-top
+</span><span class='line'>  +border-top-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-bottom
+</span><span class='line'>  +border-bottom-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-left
+</span><span class='line'>  +border-left-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-right
+</span><span class='line'>  +border-right-radius(25px)
+</span><span class='line'> 
+</span><span class='line'>#border-radius-combo
+</span><span class='line'>  +border-corner-radius(top, left, 40px)
+</span><span class='line'>  +border-corner-radius(top, right, 5px)
+</span><span class='line'>  +border-corner-radius(bottom, left, 15px)
+</span><span class='line'>  +border-corner-radius(bottom, right, 30px)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>this is the same code in css, look how long it looks </p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#demo {
+</span><span class='line'>  overflow: hidden;
+</span><span class='line'>  *zoom: 1;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>.border-radius-example {
+</span><span class='line'>  width: 125px;
+</span><span class='line'>  height: 125px;
+</span><span class='line'>  background: red;
+</span><span class='line'>  margin: 20px;
+</span><span class='line'>  float: left;
+</span><span class='line'>  padding: 5px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius {
+</span><span class='line'>  -moz-border-radius: 25px;
+</span><span class='line'>  -webkit-border-radius: 25px;
+</span><span class='line'>  border-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-top-left {
+</span><span class='line'>  -moz-border-radius-topleft: 25px;
+</span><span class='line'>  -webkit-border-top-left-radius: 25px;
+</span><span class='line'>  border-top-left-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-top-right {
+</span><span class='line'>  -moz-border-radius-topright: 25px;
+</span><span class='line'>  -webkit-border-top-right-radius: 25px;
+</span><span class='line'>  border-top-right-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-bottom-left {
+</span><span class='line'>  -moz-border-radius-bottomleft: 25px;
+</span><span class='line'>  -webkit-border-bottom-left-radius: 25px;
+</span><span class='line'>  border-bottom-left-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-bottom-right {
+</span><span class='line'>  -moz-border-radius-bottomright: 25px;
+</span><span class='line'>  -webkit-border-bottom-right-radius: 25px;
+</span><span class='line'>  border-bottom-right-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-top {
+</span><span class='line'>  -moz-border-radius-topleft: 25px;
+</span><span class='line'>  -webkit-border-top-left-radius: 25px;
+</span><span class='line'>  border-top-left-radius: 25px;
+</span><span class='line'>  -moz-border-radius-topright: 25px;
+</span><span class='line'>  -webkit-border-top-right-radius: 25px;
+</span><span class='line'>  border-top-right-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-bottom {
+</span><span class='line'>  -moz-border-radius-bottomleft: 25px;
+</span><span class='line'>  -webkit-border-bottom-left-radius: 25px;
+</span><span class='line'>  border-bottom-left-radius: 25px;
+</span><span class='line'>  -moz-border-radius-bottomright: 25px;
+</span><span class='line'>  -webkit-border-bottom-right-radius: 25px;
+</span><span class='line'>  border-bottom-right-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-left {
+</span><span class='line'>  -moz-border-radius-topleft: 25px;
+</span><span class='line'>  -webkit-border-top-left-radius: 25px;
+</span><span class='line'>  border-top-left-radius: 25px;
+</span><span class='line'>  -moz-border-radius-bottomleft: 25px;
+</span><span class='line'>  -webkit-border-bottom-left-radius: 25px;
+</span><span class='line'>  border-bottom-left-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-right {
+</span><span class='line'>  -moz-border-radius-topright: 25px;
+</span><span class='line'>  -webkit-border-top-right-radius: 25px;
+</span><span class='line'>  border-top-right-radius: 25px;
+</span><span class='line'>  -moz-border-radius-bottomright: 25px;
+</span><span class='line'>  -webkit-border-bottom-right-radius: 25px;
+</span><span class='line'>  border-bottom-right-radius: 25px;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>#border-radius-combo {
+</span><span class='line'>  -moz-border-radius-topleft: 40px;
+</span><span class='line'>  -webkit-border-top-left-radius: 40px;
+</span><span class='line'>  border-top-left-radius: 40px;
+</span><span class='line'>  -moz-border-radius-topright: 5px;
+</span><span class='line'>  -webkit-border-top-right-radius: 5px;
+</span><span class='line'>  border-top-right-radius: 5px;
+</span><span class='line'>  -moz-border-radius-bottomleft: 15px;
+</span><span class='line'>  -webkit-border-bottom-left-radius: 15px;
+</span><span class='line'>  border-bottom-left-radius: 15px;
+</span><span class='line'>  -moz-border-radius-bottomright: 30px;
+</span><span class='line'>  -webkit-border-bottom-right-radius: 30px;
+</span><span class='line'>  border-bottom-right-radius: 30px;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<p>Other part of the day we contiuned  to learn cybele gem Mr Akbudak, first explained us, how user managament part works.We looked over the every part of user managment system.After that we fix the error we saw from the other day.We changed the name  of user profile file in conrtrollee</p>
+
+
+<p>To solve profile update error we changed some miswriting in the progile_controller in user file.
+Here is the changes we did </p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1   def show
+</span><span class='line'>2     add_breadcrumb @profile.full_name, user_profile_path
+</span><span class='line'>3     respond_with([:user, @profile])    
+</span><span class='line'>4   end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We delete the square brackets in third line and we did the same for the update action in the same file</p>
+
+
+<p>Some part of the lesson we learn to send messages to users in this case to admins.We learn to send to send a welcome message  after adding a new admin.To do that we add a new function to admin_mailer class.İt takes admin's Id, finds the admin and sets to email adres and subject </p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def welcome(admin_id)
+</span><span class='line'>    @admin      = Admin.find admin_id
+</span><span class='line'>    @subject =t('email.admin.welcome.title')
+</span><span class='line'>    mail(to: @admin.email, subject: @subject)
+</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After that we add an another fuction called send_welcome_message to send a message what we want and within this we call the welcome function what we write in the admin_mailer.rb file.To show a messaga we want we create  a file with the same name in the other function in the admin_mailer which is welcome.
+ </p>
+
+
+<p> <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def welcome_message_send
+</span><span class='line'>    AdminMailer.welcome(self.id).deliver_later!
+</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure></p>
+
+<p>This is the function we write in models</p>
+
+
+<p> <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>%h2= t(&lsquo;Welcome To Page&rsquo;)</span></code></pre></td></tr></table></div></figure></p>
+
+<p>This is the simple view file to show the message we send.And don forget to add your function after commit action because that what sends your message to created admin.</p>
+
+
+<p> <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>after_commit :send_login_info,:welcome_message_send, on: :create</span></code></pre></td></tr></table></div></figure></p>
+
+<P>We continued some coding like thise for a while after that we learn hoe to deploy our app to heroku
+</P>
+
+
+<p>We dowload and install heroku toolbelt with code down below.It took a lot of our time to install.
+At the end, I couldn't even use because I got an error.So ı couldn't login yo heroku.I had to just listen to class instead of doing it..:(</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As I learn after we install, we needed to clone our project to git if we're using git to deploy.Theb we got into our prject folder and use create command for heroku</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>heroku create</span></code></pre></td></tr></table></div></figure>
+
+
+<p> When we create an app, a git remote (called heroku) is also created and associated with your local git repository.
+    Heroku generates a random name for your app, or you can pass a parameter to specify your own app 
+name.After that we deploy our project with this code    
+</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git push heroku master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The project is now deployed.To open project we deploy, we just run the code:</p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>heroku open</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>&lt;p&gt;This wasn't all i learn from workshop but just all I can write here.Again I am really 
+</code></pre>
+
+<p>appreciated for all my theacher efforts and time that they spare from thier actual jobs.And thank you giving me some homeworks to keep me doing something important other than playing Dark Souls and FarCry.I haven&rsquo;t got the chancew to practice cybele yet but  I am eager to learn more about it.</p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -644,6 +1372,10 @@ tiring but things i learn was really useful and remarkable.Thanks for the strugg
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/08/01/second-day-at-workshop/">Second Day at Workshop</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/07/30/hello-workshop/">Hello Workshop</a>
       </li>
     
@@ -705,16 +1437,6 @@ tiring but things i learn was really useful and remarkable.Thanks for the strugg
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
