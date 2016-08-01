@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[emrullah]]></title>
+  <title><![CDATA[on the rails]]></title>
   <link href="//emrullah-arsay.github.io/atom.xml" rel="self"/>
   <link href="//emrullah-arsay.github.io/"/>
-  <updated>2016-08-01T13:03:27+03:00</updated>
+  <updated>2016-08-01T13:08:19+03:00</updated>
   <id>//emrullah-arsay.github.io/</id>
   <author>
     <name><![CDATA[emrullah]]></name>
@@ -714,10 +714,11 @@ name.After that we deploy our project with this code
 </pre></td><td class='code'><pre><code class=''><span class='line'>heroku open</span></code></pre></td></tr></table></div></figure>
 
 
-<pre><code>&lt;p&gt;This wasn't all i learn from workshop but just all I can write here.Again I am really 
-</code></pre>
+<p>This wasn't all i learn from workshop but just all I can write here.Again I am really 
+appreciated for all my theacher efforts and time that they spare from thier actual jobs.And thank you giving me some homeworks to keep me doing something important other than playing Dark Souls and FarCry.I haven't got the chancew to practice cybele yet but  I am eager to learn more about it.</p>
 
-<p>appreciated for all my theacher efforts and time that they spare from thier actual jobs.And thank you giving me some homeworks to keep me doing something important other than playing Dark Souls and FarCry.I haven&rsquo;t got the chancew to practice cybele yet but  I am eager to learn more about it.</p></p>
+
+<p></p>
 ]]></content>
   </entry>
   
