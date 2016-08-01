@@ -4,7 +4,7 @@
   <title><![CDATA[on the rails]]></title>
   <link href="//emrullah-arsay.github.io/atom.xml" rel="self"/>
   <link href="//emrullah-arsay.github.io/"/>
-  <updated>2016-08-01T13:08:19+03:00</updated>
+  <updated>2016-08-01T17:52:00+03:00</updated>
   <id>//emrullah-arsay.github.io/</id>
   <author>
     <name><![CDATA[emrullah]]></name>
@@ -18,7 +18,7 @@
     <link href="//emrullah-arsay.github.io/blog/2016/08/01/second-day-at-workshop/"/>
     <updated>2016-08-01T03:29:50+03:00</updated>
     <id>//emrullah-arsay.github.io/blog/2016/08/01/second-day-at-workshop</id>
-    <content type="html"><![CDATA[<p>     We start to second day with simple html lessons.As all we know Html is a markup language using for websites.It stands for HyperText Markup Language and it is a milestone for  web pages because everything in the internet uses this language.All other languages or tools you know like php, .net, rails are just a tool for transforming our code to HTML.because of that knowing html is most important thing for a web developper.After we finish talking about html we passed on another tool we use in rails environment to transform our code to html.It is a gem called Haml.  
+    <content type="html"><![CDATA[<p>     We started to second day with simple html lesson.As all we know Html is a markup language using for websites.It stands for HyperText Markup Language and it is a milestone for  web pages because everything in the internet uses this language.All other languages or tools you know like php, .net, rails are just a tool for transforming our code to HTML.because of that knowing html is most important thing for a web developper.After we finished talking about html we passed on another tool we use in rails environment to transform our code to html.It is a gem called Haml.  
 </p>
 
 
@@ -689,6 +689,8 @@ At the end, I couldn't even use because I got an error.So ı couldn't login yo h
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh</span></code></pre></td></tr></table></div></figure>
 
+
+<p></p>
 
 <p>As I learn after we install, we needed to clone our project to git if we're using git to deploy.Theb we got into our prject folder and use create command for heroku</p>
 
