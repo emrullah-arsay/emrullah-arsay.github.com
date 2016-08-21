@@ -1,0 +1,297 @@
+---
+layout: post
+title: "Hello Workshop"
+date: 2016-07-30 16:24:26 +0300
+comments: true
+categories: 
+---
+
+<p> When I heard the workshop for the first time i thought it will be  a few simple classes and some 
+simple code samples and that's all.But that was not..In the contrary we've had condensed and mind   dazzling lessons from scracth to the end of the project till  publishing a web project.Did ı understand
+something is that's what i'm gonna trying to tell you now..</p>
+<p> By scracth, I mean we really start from the very early moments of a ruby project's life and before 
+that we even examined the birth of ruby, ruby environment and deep network classes.Let me tell you somethings about ruby and ruby environment what i learned from Mr. Tayfun's lesson.</p> 
+<p>Ruby is an object oriented, dinamic and in my opinion it's functional language  maybe not as much as
+matlab or else but when i learning ruby that was my first impression which i really liked that feature and the ease of writin code with it really made me love it.As we learned, ruby's purpose was fun and fast production for programmer.</p>
+<p>Mr. Tayfun didnt tell much about ruby because we're working on it for a long time but he mentioned a 
+lot of things about ruby and rails framwork such as gems ,ruby toolbox, bundler,git,git-flow, association in rails class and more..Later we talked about rbenv which is a simple version mangement tool.He told us opening any version of ruby applications by using global and local keywords.</p>
+ 
+{% img  /images/rbenv/rbnvlocal.jpg 600 400 'pic' 'picc' %} 
+
+ <p>Local keyword is changing your ruby version in your local folder.So you can use any version you l,ke
+ in your project.</p>
+
+{% img  /images/rbenv/rbnvglobal.jpg 600 400 'pic' 'picc' %} 
+
+<p>Global keyword is changing your ruby version completely thus you have to your new ruby version in 
+all ohter folder unless you use local keyword.</p>
+
+ <p>And  there is another keyword which is shell.You can use this keyword when you want to change your
+ruby version only in the terminal you are using.</p> 
+
+{% img  /images/rbenv/rbnvshell.jpg 600 400 'pic' 'picc' %} 
+
+<h4>Gems</h4>
+<p>A gem is tool and library file that we use when we creating our rails app.Each gem has its own 
+purpose.Some of 'em  are using for stylin such bootstap gem,sass gem etc. some are using for managing user account system like devise.There is a lot of gems we can use for almost every purpose.The real question is how do we find the gem for things what we want to do.The answer is  The Ruby Toolbox.
+Go www.ruby-toolbox.com and search the keyword of your action.There is a lot of option and good explanations there.For example you want your app to perform backup operations.Go to ruby-toolbox.com
+searcg for backup.Try to choose most used and newest gems because they are the good ones.:).Read the documantations about gems you want cause all search results may not serve for one purpose.</p>
+	
+ <p>At this point we've given our first homework about gem files versioning system which is about to
+Semantic Versioning.I am gonna tell a bit about semver.Semantic Versioning is three segment versionnig system called Major, Minor and Patch.</p>
+<p>Patch version increase when you do simple changes or reported bugfixes that does not effect 
+application's structure.</p>
+<p>Minor version increase when you add new functionality or fixing mass errors.This also doesn't affect 
+your app's compatibilty.</p>
+<p>Major version changes when you make structural changes or add incompatible api changes.</p>
+
+<p>Now we can examine ruby gems versioning system.lets look  at some examples.</p>
+
+			#gemspec
+			spec.add_runtime_dependency 'library', '>=2.2.0'
+
+			#bundler
+			gem 'library', '>= 2.2.0'
+
+ <p>when you bundle this code you'll get version 2.2.0 and higher versions of library gem thus you
+can't ecpect to get version 2.1.0's features. This is called optimistic version constraint.It says all changes from 2.x will work but higher versions then 3.o may not work.
+		The alternative is using other versioning system called pessimistic.In this concept you can 
+exclude the version that might break your code.Here is an example of the pessimistic concept</p>	
+		{% codeblock %}
+			#gemspec 
+			spec.add_runtime_dependency 'library', ['>=2.2.0','<=3.0']
+			#bundler
+			gem 'library', '>= 2.2.0' , '<=3.0'
+		{% endcodeblock %}
+
+<p>When you bundle this  you'll get the features just the versions between 2.2.0 and 3.0.</p>
+<p>	From here I want to pass the second homework we've given which is about git-flow and talk a little
+bit about this.</p>
+<p>Git flow is branching model amd management strategy of the project that helps developer keep track 
+of features , hot-fixes and releases in bigger software projects.It also prevents developing errors from mixing with the release branch.</p>
+<p>Git-flow has 2 different type of main  branches.First main branch branch is the master branch that is
+using for produuction branch.It containes ready and working version of project and it last forever with the updates of projects.Second main branch is develop branch.Develop branch contains last changes for the next version.Develop branch is also called 'Integration Branch'.When the code in this branch is consistent, all changes merge with the master branch.There is also supporting branches that is using for simultaniosly work on same files among the team members,preparing project for publish and fixing production problems quickly.</p>
+
+<ul>
+   <li>Feature Branches</li>
+   <li>Release Branches</li>
+   <li>Hotfix Branches</li>
+</ul>
+
+<h5>Feature Branches</h5>
+<p>when we develop new features for the next versions we use develop branches.when we start to
+ developing the feauture we might nor know the version number or version tag.This branch exists till the ffeature finished.When developing is finished, it can be merged with the develop branch.</p>
+<h5>Release Branches</h5>
+ <p>These branches supports preparing new production versions.When we publish new version of our app 
+ we use  tihs branch and make last changings such as changing the version number.</p>
+ <h5>Hotfix Branches</h5>
+ <p>When  we discover a critical error on the published version and we need to solve immediately, we use hotfix branches.We solve the probleö on these branches and we merge with both develop and master brancjes.</p> 
+ {% img  /images/git-flow_480.png 600 400 'pic' 'picc' %} 
+<h3>Installation of Git-flow</h3>	
+<p> For  Homebrew users with the code down below it easily can install.</p>
+{% codeblock %}
+			 brew install git-flow
+{% endcodeblock %}
+<p> To start using git flow by initializing it inside an git repository </p>	
+{% codeblock %}
+			git flow init
+{% endcodeblock %}	
+<p>You'll have to answer a few questions regarding the naming conventions for your branches.It's 
+recommended to use the default values.	</p>
+	
+<p>To start a new feature, we haave to start from develop branch and to start developing a new 
+feature with :</p>		
+{% codeblock %}
+			git flow feature start MYFEATURE
+{% endcodeblock %}  
+<p>This action creates a new freature branch based on develop and switches to it.When we finish the 
+development of the feature, we use the code down below;</p>
+{% codeblock %}
+			git flow feature finish MYFEATURE
+{% endcodeblock %}
+<p>This code merges MYDEATURE  into developing branch and removes feature branch.</p>
+<p>To publish the feature you develop to remote server so it can be used by other users, we use 
+the code given down below;</p>	
+{% codeblock %}
+			git flow feature publish MYFEATURE 
+{% endcodeblock %} 
+<p>if you want to get a feature published by another user,</p> 
+{% codeblock %}
+			git flow feature pull origin MYFEATURE
+{% endcodeblock %}
+<p>And you can easily track a feature on origin by using</p>
+{% codeblock %}
+			git flow feature track MYFEATURE
+{% endcodeblock %}
+<p>İf you want to start a release branch,you can use git flow commands too.The command creates a 
+new realese branch created from the develop branch. </p>		
+{% codeblock %}
+			git flow release start RELEASE [BASE]
+{% endcodeblock %}
+<p>It's wise to publish the release branch after creating it to allow release commits by other 
+developers.</p>	
+{% codeblock %}
+			git flow release publish RELEASE
+{% endcodeblock %}
+<p>Similar to feature you can track the release by using</p>
+{% codeblock %}
+			git flow release track RALEASE
+{% endcodeblock %}
+<p>To finish the release and mergin into master branch, we use</p>
+{% codeblock %}
+			git flow release finish RELEASE
+{% endcodeblock %}
+<p>with this code, tags the release branch with its name,removes the release branch.Dont forget to
+push your tags with</p>
+{% codeblock %}
+			git push --tags	
+{% endcodeblock %}
+<p>like the othr git flow commands, if you want to open hotfix branch we use</p>
+{% codeblock %}
+			git flow hotfix start VERSION [BASENAME]
+{% endcodeblock %}  
+<p>The version keyword marks the new hotfix release name.Optionally you can speciify a basename to start from.</p>
+<p>By finishing a hotfix iy gets merged back into develop and master branches.</p>	
+{% codeblock %}
+			git flow hotfix finish VERSION
+{% endcodeblock %}
+<p> Finally  I finished my homework and I can get to other subjects.Another subject Mr Tayfun's mention 
+is interpreted and compiled programming languages and difference between them.A compiled language is written in a code that can be executed directly on a computer's processor.This is because a compiler has translated the code into the computer's native language upfront,well before the program is even run.Intrepreted language is any programming language that is not already in machine languade  before the runtime.Unlike the compiled languages translation does not happen before.Translation to machine laguage happens at the same time as the program being executed. </p>
+
+ <p>Now it time some network classes cause it was one of the many subjects that Mr Tayfun's meentioned.
+I want to tell you upfront, most of the things I am gonna tell from here are the things that ı dont have much knowledge about.So I had to search and learn again.</p>
+<p>Before i  tell about networks, one subject left from Mr Tayfun's lesson.Its design patterns.Design 
+patterns are solutions to problems that you encounter repeatedly when you coding or designing the projects.These patterns are have to be reusable and easy to apply.THis is all i can tell about the design patterns cause its wide and very long subject so if you need any resource it's recommnded to use book of gang of four.I know.It's wierd nickname but just google it.You'll see. </p>
+<h4>ORM</h4>
+<p>ORM is acronym for object relational mapping.ORM in computer software is a programming technic for 
+converting data between incompatible type systems iin OOP languages.This creates  a virtual object database that can be used fram within the programming language.Active record is the ORM framework for Rubu on Rails environment.Active record is model part of the MVC(Model-View-Conroller) which is the layer of the system responsible for representing business data and logic.</p> 
+<p>After the ORM and DP, when we're learning the Active record we jump into C part of the MVC which is 
+controller.We learn the structure of controller and learn some about association.</p>
+<p>In rails there are a few type of association</p>
+<ul>
+	<li>belogns_to</li>
+	<li>has_one</li>
+	<li>has_many</li>
+	<li>has_many :through</li>
+	<li>has_one :through</li>
+	<li>has_and_belongs_to_many</li>
+</ul>
+<h5>belong_to Association</h5>
+<p>We use this when a model is belons to other model.:).For example a book is always belogs to a 
+author model.</p>
+{% codeblock %}
+	class Book < ApplicationRecord
+		belongs_to :author
+	end
+{% endcodeblock %}
+<p>In rails belongs to operator has to be singular term. if you don't you would get an error.That's be
+cause it's rails convention.</p>
+<h5>has_one Associaton</h5>
+<p>This association is usin for one  to one connection for another model.For example if every supplier 
+has one account  in yor app, the association would look like this:</p>	
+{% codeblock %}
+	class Supplier < ApplicationRecord
+		has_one :account
+	end
+{% endcodeblock %}  
+<h5>has_many Association</h5>
+<p>This kind of association is us,ng for one to many connections with another model.You'll often find 
+this association on the other side of the belongs_to association.For instance in a project an author has a lot of book like in real life.This model would look like ;</p>
+{% codeblock %}
+	class Author < ApplicationRecord
+		has_many :books
+	end
+{% endcodeblock %}
+
+<p>As you can see in the code above, we used pluralized model and wrote 'books'.This is another
+convention of Rails.</p>
+
+<h4>has_many :through Association</h4>
+<p>A "has_many :through" association is often used to set up many to many connection between two 
+models. Let's assume a school system.A teacher has many students and a studebts has a lot of classes.
+In this system your models shoul lok like this;</p>
+{% codeblock %}
+			class Teacher < ApplicationRecord::Base
+				has_many :classes
+				has_many :students through => :classes
+			end
+
+			class Student < ApplicationRecord::Base
+				has_many :classes
+				has_many :teachers through => :classes
+			end
+
+			class Classes < ApplicationRecord::Base
+				belogns_to :student
+				belongs_to :teacher
+			end
+{% endcodeblock %}
+<H3>Polymorphic Association</H3>
+<p>With this association, a model can belong to more than one other kind of model record.So the single
+ instance of your model for example a book can belong to and belong to library  also it can belong to author..</p>
+ <p>Let's assume a project that has user system and users have differnt types.So we have user which is
+ normal user and bussiness which is the other kind of user.For this system model should look l,ke this;
+ </p>		
+ {% codeblock %}
+			
+			class User < ApplicationRecord::Base
+				has_one :profile, as: :profileable
+			end
+
+			class Bussines < ApplicationRecord::Base
+				has_one :profile, as: :profileable
+			end
+
+			class Profile < ApplicationRecord::Base
+				blelongs_to :profileable, polymorphic: true
+			end
+
+{% endcodeblock %}
+<p>If you look careful you can see we have 'magical' keyword called profileable. It's again a rails 
+convention to use object's name and add the word able to the end.So profile will bevome profileable.
+This relationship can be easily generated using the code below;</p>
+{% codeblock %}
+	 		rails g model Profile name:string:index profileable:references(polymorphic)
+{% endcodeblock %}
+<p> For the sake of my few reader and myself  i cant get into more on Network staff that Mr Tayfun 
+told us because there is still a lot to write but I'm going to mention about RESTful Web Services a bit.</p>
+<p>Rest is stands for REprsestial State Transfer which is a web standarts based architechture and uses
+HTTP protocol for data communucation.In REST architecture, a REST Server simply provides access to resources and REST client accesses and presents the resources.</p>
+<h4>HTTP Methods</h4>
+<p>Following well known HTTP methods are commonly used in REST based architecture. </p>
+<ul>
+    <li>GET - Provides a read only access to a resource.</li>
+    <li>PUT - Used to create a new resource.</li>
+    <li>DELETE - Used to remove a resource.</li>
+    <li>POST - Used to update a existing resource or create a new resource.</li>
+</ul>
+ <p> We learned this because rails routing system is usin these protocols to access and transfer data 
+between controllers and views.</p>
+<p>In the second part of the workshop we started meet lab2023's gems and learned its production
+conventions.I mean we started with the one gem but it was enough to blow my mind.:)I can't say I understand completely,even though, I am gonna try to mention about.The gem I was telling you about is Cybele which is a template for starting web projects made by developers at Lab2023.This is complete template with everything you'll need when you're developing websites.It includes admin and user system and codes you'll need every stage of developing.</p>
+<p>We started installing the gem by running the code below;</p>
+{% codeblock %}
+	 		gem isntall cybele
+{% endcodeblock %}
+<p>It was easy start we didn't even have a clue about what we're gonna face but we continued and after 
+the installing the gem. We installed other dependent gems for the almighty cybele.:)</p>
+<p>At this point Mr Akbudak told us what was all the dependent gems are and explained all the gems in the gemfile. Now I am gonna tell what i remmber from that.First we installed redis server.As far as i remember redis was a open-souced data structure server that holds database data.it supports many type of data.</p>
+<p>second gem we installed was sidekiq.As I understand sidekiq runs background of the project and keeps
+ track and hold every interaction thay users did and save it for security or any other reasons.We usually used for check our changes and look whether they are worked or not.</p>
+{% codeblock %}
+	 		rake sidekiq:start
+{% endcodeblock %} 
+<p>We used the code above to start sidekiq to examine  user activities in our app.THen to create 
+database  we run the 'rake db:create' command and migrated it.This may look like a few lines to you but we spent hours to install the files and handle all the error we encounter them.Thanks to Mr Akbudak he singlehandedly manage to installation process to our computers and helped us handling  the errors.After the installition he explained all the files regarding to admin system which is another gem called hierapolis.it was a little bit complicated for me when i was tryin myself before this lesson.But i manage to understand how it works now.</p>
+<p>At the end of the day i thought i couldn't understand much because it was a bit overwhelming and 
+tiring but things i learn was really useful and remarkable.Thanks for the struggle to  try to tell  us.I'm really appreciated for my teacher's efforts.  </p>
+
+	
+
+
+
+
+
+
+
+
