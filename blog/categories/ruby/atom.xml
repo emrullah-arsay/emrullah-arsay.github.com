@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | emrullah]]></title>
+  <link href="//emrullah-arsay.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="//emrullah-arsay.github.io/"/>
+  <updated>2016-08-24T05:37:27+03:00</updated>
+  <id>//emrullah-arsay.github.io/</id>
+  <author>
+    <name><![CDATA[emrullah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Cybele]]></title>
+    <link href="//emrullah-arsay.github.io/blog/2016/08/23/how-to-cybele-dot/"/>
+    <updated>2016-08-23T20:58:13+03:00</updated>
+    <id>//emrullah-arsay.github.io/blog/2016/08/23/how-to-cybele-dot</id>
+    <content type="html"><![CDATA[<p>Cybele is not an anatolian goddess, actually it is but we&rsquo;re not talking about her.We&rsquo;re talking about a rails gem.It&rsquo;s an
+awesome tool to start a new project.It has everything you need when you develop a professional website.In short, it is a starting template.</p>
+
+<!-- more -->
+
+
+<p>Before I start I have to mention my friend mrk because he inspired me to write this.Since he does not seem to write an english
+version of his,I feel obligated to write for developers all around the world.ıf you wanna read his stuff, click <a href="http://www.muratrahmikurtul.com">here</a></p>
+
+<p>Here we go, first we need to install redis and sidekiq to take care background jobs and cybele works in rails 4.2.x versions right now if you&rsquo;re using Rails 5 or one of older versions you need to change it to 4.2.After that just install cybele gem using:</p>
+
+<pre><code>gem install cybele
+</code></pre>
+
+<p>Then just start a project by writing:</p>
+
+<pre><code>cybele project_name
+</code></pre>
+
+<p>on your terminal.Then set your local environment variables and access token in config/initializers/rollbar.rb.</p>
+
+<pre><code>ROOT_PATH=http://localhost:3000
+SMTP_PASSWORD=
+SMTP_USER_NAME=admin@deneme.com
+SMTP_ADDRESS=smtp.sendgrid.net
+
+BASIC_AUTH_IS_ACTIVE=no
+S3_BUCKET_NAME=deneme-v3-staging
+AWS_RAW_URL=deneme-v3-staging.s3.amazonaws.com
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+</code></pre>
+
+<p>You can get detailed info about setting your local variables from <a href="http://railsapps.github.io/rails-environment-variables.html">here</a>.After that in your migration folder set your default values for <strong>is_active</strong> and
+<strong>time_zone</strong> variables in Admin and User models.Be sure that you do this changes before the <em>rake db:migrate</em> command.</p>
+
+<p><img src="/images/pic2.jpg" alt="migratepic" /></p>
+
+<p>After setting the migration file, change username and password in /config/settings.yml as you like.Then  in public folder run this command</p>
+
+<pre><code>ln -s ../VERSION.txt VERSION.txt
+</code></pre>
+
+<p>This was the final step if you know how to use postrgresql because cybele uses postgresql.If you don&rsquo;t have postgresql,you can install by running this command on your terminal</p>
+
+<pre><code>sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+</code></pre>
+
+<p>If you already have it, open the psql using this command</p>
+
+<pre><code>sudo -u postgres psql
+</code></pre>
+
+<p>After that you need to create a database and a user.Before this step just be sure that you add a username and a password in your <strong>config/database.yml</strong> file.When you are creating a database,database name should match on your database name in database.yml file.If probably be like name_of_your_app_ development.So you should run a command like this</p>
+
+<pre><code>CREATE DATABASE "project_name_development";
+</code></pre>
+
+<p>When creating user</p>
+
+<pre><code>CREATE USER user_name WITH PASSWORD 'password' 
+</code></pre>
+
+<p>after this we need to alter our user as superuser</p>
+
+<pre><code>ALTER USER user_name WITH SUPERUSER
+</code></pre>
+
+<p>Now we can leave our psql writing <em>/q</em> or simply using ctrl+d and creat our database and migrate it using</p>
+
+<pre><code>rake db:create
+rake db:migrate
+rake dev:seed
+</code></pre>
+
+<p>Finally we can run the server but before that make sure you run the redis each time because redis is back tracking our app.So run this</p>
+
+<pre><code>redis-server
+</code></pre>
+
+<p>aaand</p>
+
+<pre><code>rails s
+</code></pre>
+
+<p>tadaaa</p>
+
+<p><img src="/images/well.jpg" alt="welcomepage" /></p>
+
+<p>You can wonder its admin panel just using</p>
+
+<pre><code>0.0.0.0:3000/hq
+</code></pre>
+
+<p>the password and and username is in seeds.rb file, that&rsquo;s because you sholdn&rsquo;t forget to run <em>rake dev:seed</em></p>
+
+<p>Thanks for reading..</p>
+]]></content>
+  </entry>
+  
+</feed>
