@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "How to Cybele.."
+title: "How to Cybele"
 date: 2016-08-23 20:58:13 +0300
 comments: true
-categories: 
+categories: Rails cybele ruby
 ---
 
 Cybele is not an anatolian goddess, actually it is but we're not talking about her.We're talking about a rails gem.It's an 
 awesome tool to start a new project.It has everything you need when you develop a professional website.In short, it is a starting template.
-
+<!-- more -->
 Before I start I have to mention my friend mrk because he inspired me to write this.Since he does not seem to write an english 
 version of his,I feel obligated to write for developers all around the world.ıf you wanna read his stuff, click [here](http://www.muratrahmikurtul.com)
 

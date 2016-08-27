@@ -24,6 +24,7 @@ and easy to understand.
               %span.icon-bar
            = link_to 'Blog', root_path, class: 'navbar-brand'
 {% endcodeblock %} 
+<!-- more -->
 <p>		Here is some  haml example code we wrote in class.We tried to write a navigation bar for our blog website.As you can see tagnames didnt change.We just used different characters to write the tags.
 </p>
 <p>	Css was the other subject we mentioned that day.As you know css is the other important part of web developing along with JavaScript.Css stands for cascading style sheets and often used to set the visual stle of webpages and styling the pages.

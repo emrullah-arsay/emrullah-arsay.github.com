@@ -1,0 +1,377 @@
+---
+layout: post
+title: "RSpec 101"
+date: 2016-08-26 15:26:32 +0300
+comments: true
+categories: TDD rspec rails ruby
+---
+###RSpec'e Giris
+
+[RSpec](rspec.info) ruby için yazılmış bir test aracıdır ve TDD mantığı kullanılarak uygulama geliştirme amacıyla kullanılır.
+
+Peki nedir bu TDD?Acılımı Test Driven Development olup teste dayalı geliştirme olarak çevirebiliceğimiz bir yazılım geliştirme metodudur.Teste Dayalı derken [Kent Beck](http://en.wikipedia.org/wiki/Kent_Beck) abimiz cok ciddiymiş çünkü bu geliştirme yonteminde kod yazmadan once testleri yazıyoruz.Teste Dayalı Geliştirmenin işleyişini ise Red - Green - Refactor dongusu ile anlayabiliriz.
+
+<div  align="center"><img src="/images/rgr.png" alt="Smiley face" style="" ></div>
+
+**Red** : Ilk adımda testimizi yazıyoruz ve testi gecemiyoruz.Testi gecemiyoruz çünkü kural bu arkadaslar zaten daha kodu da yazmadık .Teste Dayalı Geliştirmenin altın kuralı, başarısız testler yazmadan,asla (uretim kodu) kod yazma imiş.
+
+**Green** : Bu aşamada yazdığımız testi gecebilecek kodu yazıyoruz.Daha fazlasını yazmamaya dikkat etmeliyiz.
+
+**Refactor** : Son olarak kodu geliştirip, gereksiz kısımlardan kurtuluyoruz ve temiz, öz bir kod elde  etmeye çaşışıyoruz.Tabi testlerimizde geliştirmeyi, unutmayalım.
+<!-- more -->
+Amaç bu donguyu sürekli ve her ozellik için tekrar ederek hersefernde daha iyi ve daha temiz bir kod elde etmek.Temiz ve güzel kodun dışında bu teknik sayesinde debug için zaman ayrılan zaman minimuma inidirilir çünkü tüm kodlar test edilerek yazılır.Yazılan kod sürekli gelilştirilir.Kod teste hazırdır ve çalıstıgından emin olabiliriz.Kodu basit yazılmaya zorlar çünkü testin minimum gerekliliklerini karsılamak için kod yazılır.[SOLID](http://en.wikipedia.org/wiki/SOLID_(object-oriented_design\))  prensiplerine uygun kod meydana çıkarır..
+
+###RSpec Kullanım
+
+RSpec kullanmak için oncelikle gemi yuklemeliyiz.Gem'i Gemfile dosyasına kopyalamalyız.Eğer bir rails projesinde calişiyorsak genellikle development grubunun içine kopyalariz. 
+
+	group :development do
+	 	gem 'rspec-rails'
+	end
+
+Rails ortamında degilsek;
+	
+	group :development do
+	 	gem 'rspec'
+	end
+
+yazabiliriz.
+
+	bundle
+
+ komutunu unutmayalım.Daha sonra rspec dosyalırını olusturmak  ve rspec'i projemize yüklemek için 
+
+ 	rails generate  rspec:install
+
+ komutunu giriyoruz.Eger rails projesinde değilsek 
+
+ 	rspec --init
+
+ komutuyla aynı işlemi yapabiliriz.Bu komut bize
+
+ * .rspec
+ * spec/spec_helper.rb
+ * spec/rails_helper.rb
+
+ dosyalırını olusturuyor.
+
+*.rspec*  varsayılan konfigüraston seçeneklrini içerir.
+Testlerimizi spec dosyasının içine yazmalıyız.Tabi bunu da yapmanın bir usulü var arkadaslar.Zank diye tüm teslerimizi spec dosyasına atmıyoruz.*Controllers*,*models*,*views* gibi elemanlar için spec dosyası içinde yeni klasorler olusturarak bu dosylarda  ilgili *controller* ya da *model* dosyasının sonuna '_spec' yazarak olusturmalıyız.Elbette bu dosya sistemi olmadan da rahatce tüm testlerimi bir dosyada yapabiliriz ancak bu Rails ve cevik programlama mantıgına uyumlu olmayacaktır.Birgün nasip olurda Rails egitmeniniz olursa, bu sebeple convention da convention diye başınızın etini yemesi kuvvetle muhtemeldir. 
+
+**Ornek Dosya Yapısı**
+
+	app
+	├── controllers
+	│   ├── application_controller.rb
+	│   └── books_controller.rb
+	├── helpers
+	│   ├── application_helper.rb
+	│   └── books_helper.rb
+	├── models
+	│   ├── author.rb
+	│   ├── book.rb
+	└── views
+	    ├── books
+	    ├── layouts
+	lib
+	├── country_map.rb
+	├── development_mail_interceptor.rb
+	├── enviroment_mail_interceptor.rb
+	└── tasks
+	    ├── irc.rake
+	spec
+	├── controllers
+	│   ├── books_controller_spec.rb
+	├── country_map_spec.rb
+	├── features
+	│   ├── tracking_book_delivery_spec.rb
+	├── helpers
+	│   └── books_helper_spec.rb
+	├── models
+	│   ├── author_spec.rb
+	│   ├── book_spec.rb
+	├── rails_helper.rb
+	├── requests
+	│   ├── books_spec.rb
+	├── routing
+	│   └── books_routing_spec.rb
+	├── spec_helper.rb
+	└── tasks
+	│   ├── irc_spec.rb
+	└── views
+	    ├── books	
+
+
+Deneme amacıyla olusturdugumuz rspectest klasorunde *rspec --init * komutu ile rspec'i baslatıp içine olusturdugumuz lib/sample.rb dosyası için testlerimizi spec/lib/sample_spec.rb  dosyasını içine yazabiliriz,
+
+	rspec spec/lib/sample_spec.rb 
+
+komutu ile testlerimizi calıstırabilir ve rspec'in calısır durumda oldugunu gorebiliriz. 
+
+![rspectest](/images/emptytest.jpg)
+
+###RSpec Syntax
+
+Test yazarken anlamamız gereken birkaç anahtar kelime mevcut.Benim anlayabilmem için tüm detaylarını hiçbişey atlamadan ogrenmem gerekir.O yüzden anlatırken de hiç bisey atlamamaya calısacagım. 
+
+####*describe* Bloğu
+
+*describe*   anahtar kelimesi bir ornek grubunu tanımlamak için kullanılır.*describe* test edilen sınıfın adını alabileceği gibi herhangi bir string de alabilir.Ornegin User sınıfı için test yazıyorsanız 
+{% codeblock lang:ruby title:"user_spec.rb" %}
+	decribe User do
+
+	end 
+{% endcodeblock %}
+gibi yazabilir ve bu kod içersinde yeni describe keywordleri ile yeni testler yazabiliriz.
+{% codeblock lang:ruby  %}
+	describe Myclass do
+		describe ".sınıf_metodu_1"
+
+		end
+		describe "#ornek_metodu_1"
+
+		end
+	end
+{% endcodeblock %}
+Yukarıdaki ornekte Myclass sınıfına  ait iki metod için test yazılmakta..Yine bir rails geleneği olarak sınıf metodları test edilirken basına (.) konulur.Ornek(instance) metodu test edilirken (#) konulur. 
+
+####*require* kelimesi
+
+Testlerinizi calıstırmadan once, '_spec.rb' seklinde isimlendirdigimiz test dosyasına test etmek istedigimiz sınıfı eklememiz ya da cagırmamız gerekir.Bu işlemi *require* kelimesini kullanarak yapiyoruz.Ornegin User sınıfı için soyle yazılabilir;
+{% codeblock lang:ruby title:"user_spec.rb" %}
+	require 'user'
+
+	decribe User do
+
+	end 
+{% endcodeblock %}
+
+####*context* Bloğu
+
+*context* kelimesi, *describe*'a benzer sekilde blok olarak kullanılır ve aynı sekilde sınıf ismi alabileceği gibi string argumanlar da alabilir.*context* blogunun kullanım amacı benzer tipte olan testleri bir baslık altında toplalamktır.Bu yetenek daha karmaşık sistemler eklendiginde cok kullanıslı olabilir.*context* kullanmak zorunlu değildir ancak içerdigi orneklere  daha fazla detay eklenmesini sağlar.
+
+#### *it* Bloğu
+
+**it** kelimesi, testi yapılan ornegin davranısını tanımlamak için kullanılır.Genellikle testin sonucuna gore gerceklesmesi beklenenen olay beklentisi(expectation) tanımlanır.User sınıfı orneginde kullanıcının bir role atanıp atanmadıgını denetleyen bir test için soyle kullanılabilir ;
+{% codeblock lang:ruby title:"user_spec.rb"  %}
+	describe User do
+		it "should be in any role assigned to it" do
+
+		end
+	end
+{% endcodeblock %}
+Bir Hash sınıfının yeni hash nesne olusturuldugunda nesnenin bos olup olmadıgını denetleyen bir test ornegi asagdaki gibi yazılabilirdi;
+{% codeblock lang:ruby title:"hash_spec.rb" %}	
+	describe Hash do
+		it "should be return blank isnstance" do
+
+		end
+	end
+
+{% endcodeblock %}
+*it* kelimesi de, *describe*  ve *context* gibi sınıf isimlerini ve string argumanları kabul eder.Son olarak da *it* blogunun içine testlerimiz yazılır.Ancak bu kısımda da bilmemiz gerekn bazı anahtar kelimeler mevcut. 
+
+#### *expect* anahtar kelimesi 
+
+*expect* kelimesi testimizin sonucu için istenen beklentinin(expectation) tanımlanması için kullanılır.Yani asıl test işleminin yapıldıgı ve beklenen sonucla karsılastırıldıgı yerdir.Yukarı da  verdiğimiz her user bir role atanıp atanmadiğini denetleyen user sınıfı ornegini tamamlarsak;
+{% codeblock lang:ruby  %}
+	describe Hash do
+		it "should be return blank isnstance" do
+			user = user.new
+			expect(user).to be_in_role("assigned_role")
+		end
+	end 
+{% endcodeblock %}
+seklinde olurdu.Burada to be  kelimesi eslestirici metod olarak cevirdigim ingilizce (matcher) olarak adlandırılan metodlardandır Aynı sekilde kullanılmak üzere tanımlanmıs bircok matcher metodu vardır. in_role("") kelimesi ise testi yapılan sınıfta tanımlanmıs bir metoddur zira testini yaptıgımız baslıca elemanlardandır.Buna gore User sınıfı soyle tanımlnmıs olmalıdır.
+{% codeblock lang:ruby title:"user.rb"  %}
+	class User
+		def in_role?(role)
+			...
+		end
+	end
+{% endcodeblock %}
+
+###Eşlestirici metodlar (Matchers)
+
+rspec-expect metodu bircok hazır esleştirici metoda sahiptir.
+Her eslestirici metod **expect(...).to** ya da **expect(...).not_to**
+ile kullanılabilir.Ornegin;
+
+	expect(result).to eq(85)
+	expect(list)not_to be_empty
+	expect(pi).to > 3
+ 
+####Nesne ozdeşliği (be)
+
+	expect(actual).to be(expected) 
+
+Burada nesnelerin ozdeşiligi denetlenir.Yani actual nesnesi expected nesnesinin tıpkısı(identical) olmalıdır.
+
+####Nesne eşitliği (eq)
+
+	expect(actual).to eq(expected) # actual == expected ise geçer
+
+Bu metodda anlasılacagı uzere eşitlik kontrol edilir.
+
+	expect(actual).to eql(expected)
+	expect(actual).to equal(expected)
+
+metodları da eq ile aynı işlevi gorur.
+Not: 'expect' metodu '==' operatorunu desteklemez.
+
+
+#### Karşılastırmalar
+	
+	expect(actual).to be >  expected
+	expect(actual).to be >= expected
+	expect(actual).to be <= expected
+	expect(actual).to be <  expected
+	expect(actual).to be_between(minimum, maximum).inclusive
+	expect(actual).to be_between(minimum, maximum).exclusive
+	expect(actual).to match(/expression/)
+	expect(actual).to be_within(delta).of(expected)
+	expect(actual).to start_with expected
+	expect(actual).to end_with expected
+
+### Test yazarken kullanılan bazı yararlı ozellikler
+
+{% codeblock lang:ruby title:"stack.rb" %}
+	class Stack
+
+	   def initialize
+	    @store = []
+	   end
+
+	   def push(x)
+	    @store.push x
+	   end
+
+	   def pop
+	    @store.pop
+	   end
+
+	   def peek
+	    @store.last
+	   end
+
+	   def empty?
+	    @store.empty?
+	   end
+	   def size
+	     @store.size
+	   end
+
+	end
+{% endcodeblock %}
+Bu ozellikleri bir ornek üzerinde acıklamak istiyorum.Ornegin, yukarıda verdigimiz stack sınıfının düzgün calısıp calısmadıgını denetleyen test kodlarını yazmaya çalışalım.
+{% codeblock lang:ruby title:"stack_spec.rb"  %}
+	require 'stack'
+
+	describe Stack do	
+		it 'pushes value onto itself' do
+			stack = Stack.new
+			stack.push(85)
+			expect(stack.size).to eq 1
+		end
+		it 'pops the last value that was pushed' do
+			stack = Stack.new
+			stack.push(85)
+			expect(stack.pop).to eq 85
+		end
+	end
+{% endcodeblock %}
+Ornege inceleyecek olursak *require* ile stack klasımızı çagirdık.Daha sonra *describe* bloguna calıstıgımız sınıfın adını tanımladık.*it* bloguna testimizin amacını yani neyi test ettigimizi tanımladık.Ardından yeni stack olusturup içine attigimiz sayıdan sonra stackin boyutunun 1 olmasını **bekledik**(expected).Ikinci *it* blogunda da benzer bir işlem yapılmış. Ardından terminale daha önce yazdıgımız gibi
+
+	rspec spec/lib/lib_spec.rb
+
+yazarsak,
+
+![rspectest](/images/libspec1.jpg)
+
+sonucunu elde ederiz.
+
+Ayrıca spec klasorundeki test dosyamızı '_spec.rb' seklinde isimlendirdiysek  sadece 
+
+	rspec spec
+
+komutunu calıstırararak aynı sonucu elde edebiliriz.Bu yontemle *spec* klasorundeki tüm test dosyalarıni calıstırmış oluruz. 
+
+####Nested #describe
+{% codeblock lang:ruby title:"Nested #describe"  %}
+	require 'stack'
+
+	describe Stack do
+		describe '#push' do
+			it 'pushes value onto itself' do
+				stack = Stack.new
+				stack.push(85)
+				expect(stack.size).to eq 1
+			end
+		end
+		describe '#pop' do
+			it 'pops the last value that was pushed' do
+				stack = Stack.new
+				stack.push(85)
+				expect(stack.pop).to eq 85
+			end
+		end
+	end
+{% endcodeblock %}
+
+Yukarıdaki ornekte her test blogu için, hangi metod uzerinde test yapıldıgını belirtmek amacıyla describe blokları ile test edilen metodların adları tanımlanmıstır.
+
+####Refactoring
+
+Ractoring yazdıgımız testlerde düzenlemeler yapmak ve gereksiz kodlardan kurtulmaktır.Ornegin yukarıdaki orneklerde herbir it blogunda **stack = Stack.new** kodu tekrarlanıyor.Bu fazlalalıktan kurtulmak için de, denek yani uzerine test yaptıgımız nesne anlamına gelen **subject** keywordunu kullanabiliriz.
+
+
+{% codeblock lang:ruby title:"subject keyword"  %}
+	require 'stack'
+
+	subject(:stack)(Stack.new)
+
+	describe Stack do
+		describe '#push' do
+			it 'pushes value onto itself' do
+				stack.push(85)
+				expect(stack.size).to eq 1
+			end
+		end
+		describe '#pop' do
+			it 'pops the last value that was pushed' do
+				stack.push(22)
+				expect(stack.pop).to eq 22
+			end
+		end
+	end
+{% endcodeblock %}
+
+####*let* ile initial value  tanımlama 
+Baslıktan da anlasıldığı üzere let anahatar kelimesi ile testimiz için baslangic degerleri girebiliyoruz.Önceki ornekte  her it blogunda stack'e atılan degerleri baslangıc degerleri olarak ekleyebiliriz.
+
+{% codeblock lang:ruby title:"let keyword"  %}
+	
+	subject(:stack)(Stack.new(initial_values))
+
+	let(:initial_values){[]}
+
+	describe Stack do
+		describe '#push' do
+			it 'pushes value onto the stack' do
+				stack.push(85)
+				expect(stack.size).to eq 1
+			end
+		end
+	end
+{% endcodeblock %}
+---
+Iyi geceler arkadaslar.
+
+#####Kaynaklar
+1. http://www.tutorialspoint.com/rspec/rspec_hooks.htm
+2. https://www.youtube.com/watch?v=vvt3e4uUQ-E&index=2&list=PLq32xWf2bPRx_1SAVTsRf-FSkijGiY7w1
+3. https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+4. http://blog.teamtreehouse.com/an-introduction-to-rspec
+5. http://blog.davidchelimsky.net/blog/2007/05/14/an-introduction-to-rspec-part-i/
+6. http://kadertarlan.com/blog/2015/02/09/rspec-nedir/
+

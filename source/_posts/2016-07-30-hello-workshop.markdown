@@ -13,6 +13,7 @@ something is that's what i'm gonna trying to tell you now..</p>
 that we even examined the birth of ruby, ruby environment and deep network classes.Let me tell you somethings about ruby and ruby environment what i learned from Mr. Tayfun's lesson.</p> 
 <p>Ruby is an object oriented, dinamic and in my opinion it's functional language  maybe not as much as
 matlab or else but when i learning ruby that was my first impression which i really liked that feature and the ease of writin code with it really made me love it.As we learned, ruby's purpose was fun and fast production for programmer.</p>
+<!-- more -->
 <p>Mr. Tayfun didnt tell much about ruby because we're working on it for a long time but he mentioned a 
 lot of things about ruby and rails framwork such as gems ,ruby toolbox, bundler,git,git-flow, association in rails class and more..Later we talked about rbenv which is a simple version mangement tool.He told us opening any version of ruby applications by using global and local keywords.</p>
  
