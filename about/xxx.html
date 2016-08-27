@@ -1,0 +1,530 @@
+  <html>
+
+  <head>
+
+  	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">-->
+
+  	<title>Emrullah Arsay</title>
+
+  	<link rel="shortcut icon" href="favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/slow_scroll.js"></script>
+
+
+
+    <style>
+
+    body {
+
+    border-top: 0;
+
+    margin-top: 0px;
+
+    padding-top: 0px;
+
+    margin-bottom: 500px;
+
+    margin-left: 5%;
+
+    font-family: helvetica, arial, sans-serif;
+
+    line-height: 1.55555;
+
+    font-size: 18px;
+
+  	background:#eee;
+
+  }
+
+
+
+  header, aside, nav, section, footer {
+
+    display: block;
+
+  }
+
+
+
+
+
+  a {
+
+    color: #495EC9;
+
+    text-decoration: none;
+
+
+
+  }
+
+  a:hover {
+
+    background-color: #ebebeb;
+
+  }
+
+
+
+  .button {
+
+    display:inline-block;
+
+    border:0;
+
+    border-radius:0;
+
+    outline:0;
+
+    background:#4e68c7;
+
+    color:white;
+
+    white-space:nowrap;
+
+    font-size: 13px;
+
+    font-family: 'helvetica neue', 'helvetica', arial;
+
+    text-decoration: none;
+
+    padding:9px 12px;
+
+    line-height:1.4;
+
+    position:relative;
+
+    top:-5px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+
+    }
+
+
+
+  .button:hover {
+
+    color:white;
+
+    background:#3d57b4; 
+
+  }
+
+
+
+
+
+  .my_name {
+
+    font-family: 'helvetica neue', 'helvetica', arial;
+
+    font-size: 28px; 
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    font-weight: 600;   
+
+  }
+
+
+
+  #my_name_for_menu {
+
+    margin-bottom: 25px;
+
+    width:200px;
+
+  }
+
+
+
+  #my_name_for_mobile {
+
+    margin-top: 25px;
+
+    margin-bottom: -20px;
+
+    display: none;
+
+  }
+
+
+
+  #menu {
+
+    position: fixed;
+
+    width: 235px;
+
+    overflow-x: hidden;
+
+    
+
+  }
+
+
+
+  #main {
+
+    margin-left: 235px;
+
+    max-width: 600px;
+
+    min-width: 300px;
+
+    margin-right: 25px;
+
+  }
+
+
+
+  #main p{
+
+    margin-bottom: 28px;
+
+  }
+
+
+
+  #main ul {
+
+    list-style-type:square;
+
+    margin-left:-15px;
+
+    margin-bottom: 28px;
+
+  }
+
+
+
+  #main li {
+
+    margin-bottom: 3px;   
+
+  }
+
+
+
+
+
+  .section_title {
+
+    margin-top: 28px;
+
+    margin-bottom: 19px;
+
+    font-family: 'georgia', 'helvetica neue', 'helvetica', arial;
+
+    font-size: 28px;
+
+    font-style: italic;
+
+  }
+
+
+
+  .project_box {
+
+    background-color: white; /* #fcfbcc; */
+
+    border-left: 7px #ccc solid;
+
+    margin-bottom: 40px;  
+
+  }
+
+
+
+  .project_title {
+
+    font-size: 26px;
+
+    font-family: 'helvetica neue', 'helvetica', arial;
+
+    font-weight: bold;
+
+    margin-left: 20px;
+
+    margin-top: 10px;
+
+    margin-bottom: 8px;
+
+  }
+
+
+
+  .int_image {   
+
+    border:0; 
+
+    background-color: white !important;
+
+    
+
+  }
+
+
+
+  a.int_image:hover {
+
+    background-color: white !important;
+
+  }
+
+
+
+  .int_image img {
+
+    margin-top: 5px;
+
+    margin-right: 10px;
+
+    margin-left: 20px;
+
+    margin-bottom: 4px; 
+
+    width: 40%; 
+
+    float: left;
+
+    border: 1px black solid;
+
+    background-color: white !important;
+
+  }
+
+
+
+  .project_description {
+
+    margin-top: 5px;
+
+    margin-left: 20px;
+
+    margin-right: 20px;
+
+    margin-bottom: 30px;
+
+    text-align: justify;
+
+
+
+  }
+
+
+
+  .project_description a:hover {
+
+    background-color: #ebebeb !important; /* was #ccc */ 
+
+  }
+
+
+
+  .newsweek {
+
+    font-style: italic;
+
+  }
+
+
+
+
+
+  @media only screen and (max-width: 650px) {
+
+    body {
+
+      margin-bottom: 30px;
+
+      margin-left: 10px;
+
+    }
+
+    aside {
+
+      display: none;
+
+    }
+
+    #main {
+
+      margin-left: 10px;
+
+      margin-right: 10px;
+
+    }
+
+    #name_for_mobile {
+
+      display: block;
+
+    }
+
+
+
+  }
+
+
+
+  @media only screen and (max-width: 480px) {
+
+    .project_title {
+
+      margin-bottom: 2px;
+
+    }
+
+    .project_description, img {
+
+      display: none;
+
+    }
+
+  }
+
+
+
+
+
+    </style>
+
+    
+
+  </head>
+
+
+
+  <body id="top">
+
+    <aside>
+
+    	<div id="menu">
+
+  	 		<div class="my_name" id="my_name_for_menu">Emrullah Arsay</div>
+
+
+
+  	 		<a class="button" href="#top">About</a><br>
+
+        <a class="button" href="/">Blog</a><br>
+
+        <a class="button" href="/blog/archives">Archives</a><br>
+
+  	
+
+    	</div>
+
+    </aside> 
+
+
+
+
+
+    <div id="main">
+
+      	
+
+    	<div class="my_name" id="my_name_for_mobile">Emrullah Arsay</div>
+
+    	<div class="section_title" id="about">Hi! I&#8217;m Emrullah</div>
+
+
+      <h3>Emrullah Arsay</h3>
+  		<p>
+
+      Hello! My name is Emrullah Arsay. I live in Denizli where I am a senior Computer Engineer stundent at Pamukkale University. I am currently an intern at  
+
+  	<a href="" target="_blank">Lab2023</a>, focusing mainly on Ruby on Rails.This is where I met Ruby on rails. 
+
+      </p>
+
+      <p>
+
+      Previously, I did my summer internship at one of the biggest copper companies in Denizli named  <a href="http://www.erbakir.com.tr/" target="_blank">Erbakir Elektrolitik As</a>.
+
+  	Recently I attended the <a href="http://kamp.linux.org.tr/2016/" target="_blank">Linux Summer Camp</a>, a coding camp working with the Linux environment.I took 120 hours of 
+
+  	Ruby on Rails class.
+
+  	And before that I was working on some school projects.I used C/C#.I am interested in  android programming , pic programming and several other things in my area.I used to like fantasy/crime/thriller novels 
+
+  	I happened to read HP, ASOIAF series and all books of Dan Brown and JC Grange but I'm more into literature recently. 
+
+  		</p>
+
+  		<p>
+
+  		  You can find me on <a href="http://www.facebook.com/emr.arsay" target="_blank">Facebook</a> 
+
+  		  and check my projects on <a href="http://github.com/emrullah-arsay target="_blank">GitHub</a>..
+
+  		  From time to time I update a <a href="http://emrullah-arsay.github.io/" target="_blank">programming blog</a>
+
+  		  where I write about interesting applications, text editors, Rails, Ruby, and other internet stuff.
+
+  		</p>
+
+
+
+      <div class="section_title" id="contact">Contact</div>
+
+      <p> 
+
+      You can email me at emrullaharsay at gmail dot com or my <a href="http://www.facebook.com/emr.arsay" target="_blank">facebook</a>  ..
+
+      </p>
+
+
+
+    </div>
+
+     
+
+  </body>
+
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h3>Emrullah Arsay</h3>
+<p>
+Hello! My name is Emrullah Arsay. I live in Denizli where I am a senior Computer Engineer stundent at Pamukkale University. I am currently an intern at  <a href="" target="_blank">Lab2023</a>, focusing mainly on Ruby on Rails.This is where I met Ruby on rails. 
+</p>
+<p>
+Previously, I did my summer internship at one of the biggest copper companies in Denizli named  <a href="http://www.erbakir.com.tr/" target="_blank">Erbakir Elektrolitik As</a>.
+Recently I attended the <a href="http://kamp.linux.org.tr/2016/" target="_blank">Linux Summer Camp</a>, a coding camp working with the Linux environment.I took 120 hours of Ruby on Rails class.And before that I was working on some school projects.I used C/C#.I am interested in  android programming , pic programming and several other things in my area.I used to like fantasy/crime/thriller novels.I happened to read HP, ASOIAF series and all books of Dan Brown and JC Grange but I'm more into literature recently. 
+</p>
+<p>
+You can find me on <a href="http://www.facebook.com/emr.arsay" target="_blank">Facebook</a>  
+ and check my projects on <a href="http://github.com/emrullah-arsay target="_blank">GitHub</a>..From time to time I update a <a href="http://emrullah-arsay.github.io/" target="_blank">programming blog</a> where I write about interesting applications, text editors, Rails, Ruby, and other internet stuff.
+</p>
+ <div class="section_title" id="contact">Contact</div>
+ <p> 
+ You can email me at emrullaharsay at gmail dot com or my <a href="http://www.facebook.com/emr.arsay" target="_blank">facebook</a>  ..
+</p>
+

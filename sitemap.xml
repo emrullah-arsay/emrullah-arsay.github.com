@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>//emrullah-arsay.github.io/blog/2016/08/26/rspec-101/</loc>
+<lastmod>2016-08-26T15:26:32+03:00</lastmod>
+</url>
+<url>
 <loc>//emrullah-arsay.github.io/blog/2016/08/23/how-to-cybele-dot/</loc>
 <lastmod>2016-08-23T20:58:13+03:00</lastmod>
 </url>
@@ -42,5 +46,9 @@
 </url>
 <url>
 <loc>//emrullah-arsay.github.io/blog/categories/ruby/</loc>
+</url>
+<url>
+<loc>//emrullah-arsay.github.io/about/xxx.html</loc>
+<lastmod>2016-08-25T10:49:22+03:00</lastmod>
 </url>
 </urlset>

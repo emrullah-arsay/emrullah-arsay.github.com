@@ -4,7 +4,7 @@
   <title><![CDATA[emrullah]]></title>
   <link href="//emrullah-arsay.github.io/atom.xml" rel="self"/>
   <link href="//emrullah-arsay.github.io/"/>
-  <updated>2016-08-24T13:13:54+03:00</updated>
+  <updated>2016-08-27T03:18:26+03:00</updated>
   <id>//emrullah-arsay.github.io/</id>
   <author>
     <name><![CDATA[emrullah]]></name>
@@ -12,6 +12,561 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[RSpec 101]]></title>
+    <link href="//emrullah-arsay.github.io/blog/2016/08/26/rspec-101/"/>
+    <updated>2016-08-26T15:26:32+03:00</updated>
+    <id>//emrullah-arsay.github.io/blog/2016/08/26/rspec-101</id>
+    <content type="html"><![CDATA[<h3>RSpec'e Giris</h3>
+
+<p><a href="rspec.info">RSpec</a> ruby için yazılmış bir test aracıdır ve TDD mantığı kullanılarak uygulama geliştirme amacıyla kullanılır.</p>
+
+<p>Peki nedir bu TDD?Acılımı Test Driven Development olup teste dayalı geliştirme olarak çevirebiliceğimiz bir yazılım geliştirme metodudur.Teste Dayalı derken <a href="http://en.wikipedia.org/wiki/Kent_Beck">Kent Beck</a> abimiz cok ciddiymiş çünkü bu geliştirme yonteminde kod yazmadan once testleri yazıyoruz.Teste Dayalı Geliştirmenin işleyişini ise Red - Green - Refactor dongusu ile anlayabiliriz.</p>
+
+<div  align="center"><img src="//emrullah-arsay.github.io/images/rgr.png" alt="Smiley face" style="" ></div>
+
+
+<p><strong>Red</strong> : Ilk adımda testimizi yazıyoruz ve testi gecemiyoruz.Testi gecemiyoruz çünkü kural bu arkadaslar zaten daha kodu da yazmadık .Teste Dayalı Geliştirmenin altın kuralı, başarısız testler yazmadan,asla (uretim kodu) kod yazma imiş.</p>
+
+<p><strong>Green</strong> : Bu aşamada yazdığımız testi gecebilecek kodu yazıyoruz.Daha fazlasını yazmamaya dikkat etmeliyiz.</p>
+
+<p><strong>Refactor</strong> : Son olarak kodu geliştirip, gereksiz kısımlardan kurtuluyoruz ve temiz, öz bir kod elde  etmeye çaşışıyoruz.Tabi testlerimizde geliştirmeyi, unutmayalım.</p>
+
+<!-- more -->
+
+
+<p>Amaç bu donguyu sürekli ve her ozellik için tekrar ederek hersefernde daha iyi ve daha temiz bir kod elde etmek.Temiz ve güzel kodun dışında bu teknik sayesinde debug için zaman ayrılan zaman minimuma inidirilir çünkü tüm kodlar test edilerek yazılır.Yazılan kod sürekli gelilştirilir.Kod teste hazırdır ve çalıstıgından emin olabiliriz.Kodu basit yazılmaya zorlar çünkü testin minimum gerekliliklerini karsılamak için kod yazılır.<a href="http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a>  prensiplerine uygun kod meydana çıkarır..</p>
+
+<h3>RSpec Kullanım</h3>
+
+<p>RSpec kullanmak için oncelikle gemi yuklemeliyiz.Gem'i Gemfile dosyasına kopyalamalyız.Eğer bir rails projesinde calişiyorsak genellikle development grubunun içine kopyalariz.</p>
+
+<pre><code>group :development do
+    gem 'rspec-rails'
+end
+</code></pre>
+
+<p>Rails ortamında degilsek;</p>
+
+<pre><code>group :development do
+    gem 'rspec'
+end
+</code></pre>
+
+<p>yazabiliriz.</p>
+
+<pre><code>bundle
+</code></pre>
+
+<p> komutunu unutmayalım.Daha sonra rspec dosyalırını olusturmak  ve rspec'i projemize yüklemek için</p>
+
+<pre><code>rails generate  rspec:install
+</code></pre>
+
+<p> komutunu giriyoruz.Eger rails projesinde değilsek</p>
+
+<pre><code>rspec --init
+</code></pre>
+
+<p> komutuyla aynı işlemi yapabiliriz.Bu komut bize</p>
+
+<ul>
+<li>.rspec</li>
+<li>spec/spec_helper.rb</li>
+<li>spec/rails_helper.rb</li>
+</ul>
+
+
+<p> dosyalırını olusturuyor.</p>
+
+<p><em>.rspec</em>  varsayılan konfigüraston seçeneklrini içerir.
+Testlerimizi spec dosyasının içine yazmalıyız.Tabi bunu da yapmanın bir usulü var arkadaslar.Zank diye tüm teslerimizi spec dosyasına atmıyoruz.<em>Controllers</em>,<em>models</em>,<em>views</em> gibi elemanlar için spec dosyası içinde yeni klasorler olusturarak bu dosylarda  ilgili <em>controller</em> ya da <em>model</em> dosyasının sonuna &lsquo;_spec&rsquo; yazarak olusturmalıyız.Elbette bu dosya sistemi olmadan da rahatce tüm testlerimi bir dosyada yapabiliriz ancak bu Rails ve cevik programlama mantıgına uyumlu olmayacaktır.Birgün nasip olurda Rails egitmeniniz olursa, bu sebeple convention da convention diye başınızın etini yemesi kuvvetle muhtemeldir.</p>
+
+<p><strong>Ornek Dosya Yapısı</strong></p>
+
+<pre><code>app
+├── controllers
+│   ├── application_controller.rb
+│   └── books_controller.rb
+├── helpers
+│   ├── application_helper.rb
+│   └── books_helper.rb
+├── models
+│   ├── author.rb
+│   ├── book.rb
+└── views
+    ├── books
+    ├── layouts
+lib
+├── country_map.rb
+├── development_mail_interceptor.rb
+├── enviroment_mail_interceptor.rb
+└── tasks
+    ├── irc.rake
+spec
+├── controllers
+│   ├── books_controller_spec.rb
+├── country_map_spec.rb
+├── features
+│   ├── tracking_book_delivery_spec.rb
+├── helpers
+│   └── books_helper_spec.rb
+├── models
+│   ├── author_spec.rb
+│   ├── book_spec.rb
+├── rails_helper.rb
+├── requests
+│   ├── books_spec.rb
+├── routing
+│   └── books_routing_spec.rb
+├── spec_helper.rb
+└── tasks
+│   ├── irc_spec.rb
+└── views
+    ├── books 
+</code></pre>
+
+<p>Deneme amacıyla herhangi bir klasorde *rspec &ndash;init * komutu ile rspec'i baslatıp içine olusturdugunuz lib/sample.rb dosyası için spec/lib/sample_spec.rb  dosyasını içine testlerinizi yazabilir,</p>
+
+<pre><code>rspec spec/lib/sample_spec.rb 
+</code></pre>
+
+<p>komutu ile testlerimizi calıstırabilir ve rspec'in calısır durumda oldugunu gorebiliriz.</p>
+
+<p><img src="//emrullah-arsay.github.io/images/emptytest.jpg" alt="rspectest" /></p>
+
+<h3>RSpec Syntax</h3>
+
+<p>Test yazarken anlamamız gereken birkaç anahtar kelime mevcut.Benim anlayabilmem için tüm detaylarını hiçbişey atlamadan ogrenmem gerekir.O yüzden anlatırken de hiç bisey atlamamaya calısacagım.</p>
+
+<h4><em>describe</em> Bloğu</h4>
+
+<p><em>describe</em>   anahtar kelimesi bir ornek grubunu tanımlamak için kullanılır.<em>describe</em> test edilen sınıfın adını alabileceği gibi herhangi bir string de alabilir.Ornegin User sınıfı için test yazıyorsanız</p>
+
+<figure class='code'><figcaption><span>title:"user_spec.rb" </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">decribe</span> <span class="no">User</span> <span class="k">do</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>gibi yazabilir ve bu kod içersinde yeni describe keywordleri ile yeni testler yazabiliriz.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">describe</span> <span class="no">Myclass</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">describe</span> <span class="s2">&quot;.sınıf_metodu_1&quot;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">describe</span> <span class="s2">&quot;#ornek_metodu_1&quot;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yukarıdaki ornekte Myclass sınıfına  ait iki metod için test yazılmakta..Yine bir rails geleneği olarak sınıf metodları test edilirken basına (.) konulur.Ornek(instance) metodu test edilirken (#) konulur.</p>
+
+<h4><em>require</em> kelimesi</h4>
+
+<p>Testlerinizi calıstırmadan once, &lsquo;_spec.rb&rsquo; seklinde isimlendirdigimiz test dosyasına test etmek istedigimiz sınıfı eklememiz ya da cagırmamız gerekir.Bu işlemi <em>require</em> kelimesini kullanarak yapiyoruz.Ornegin User sınıfı için soyle yazılabilir;</p>
+
+<figure class='code'><figcaption><span>title:"user_spec.rb" </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="nb">require</span> <span class="s1">&#39;user&#39;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">decribe</span> <span class="no">User</span> <span class="k">do</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4><em>context</em> Bloğu</h4>
+
+<p><em>context</em> kelimesi, <em>describe</em>&lsquo;a benzer sekilde blok olarak kullanılır ve aynı sekilde sınıf ismi alabileceği gibi string argumanlar da alabilir.<em>context</em> blogunun kullanım amacı benzer tipte olan testleri bir baslık altında toplalamktır.Bu yetenek daha karmaşık sistemler eklendiginde cok kullanıslı olabilir.<em>context</em> kullanmak zorunlu değildir ancak içerdigi orneklere  daha fazla detay eklenmesini sağlar.</p>
+
+<h4><em>it</em> Bloğu</h4>
+
+<p><strong>it</strong> kelimesi, testi yapılan ornegin davranısını tanımlamak için kullanılır.Genellikle testin sonucuna gore gerceklesmesi beklenenen olay beklentisi(expectation) tanımlanır.User sınıfı orneginde kullanıcının bir role atanıp atanmadıgını denetleyen bir test için soyle kullanılabilir ;</p>
+
+<figure class='code'><figcaption><span>title:"user_spec.rb"  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">describe</span> <span class="no">User</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">it</span> <span class="s2">&quot;should be in any role assigned to it&quot;</span> <span class="k">do</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bir Hash sınıfının yeni hash nesne olusturuldugunda nesnenin bos olup olmadıgını denetleyen bir test ornegi asagdaki gibi yazılabilirdi;</p>
+
+<figure class='code'><figcaption><span>title:"hash_spec.rb" </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> 
+</span><span class='line'>  <span class="n">describe</span> <span class="no">Hash</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">it</span> <span class="s2">&quot;should be return blank isnstance&quot;</span> <span class="k">do</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>it</em> kelimesi de, <em>describe</em>  ve <em>context</em> gibi sınıf isimlerini ve string argumanları kabul eder.Son olarak da <em>it</em> blogunun içine testlerimiz yazılır.Ancak bu kısımda da bilmemiz gerekn bazı anahtar kelimeler mevcut.</p>
+
+<h4><em>expect</em> anahtar kelimesi</h4>
+
+<p><em>expect</em> kelimesi testimizin sonucu için istenen beklentinin(expectation) tanımlanması için kullanılır.Yani asıl test işleminin yapıldıgı ve beklenen sonucla karsılastırıldıgı yerdir.Yukarı da  verdiğimiz her user bir role atanıp atanmadiğini denetleyen user sınıfı ornegini tamamlarsak;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">describe</span> <span class="no">Hash</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">it</span> <span class="s2">&quot;should be return blank isnstance&quot;</span> <span class="k">do</span>
+</span><span class='line'>          <span class="n">user</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>          <span class="n">expect</span><span class="p">(</span><span class="n">user</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">be_in_role</span><span class="p">(</span><span class="s2">&quot;assigned_role&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>seklinde olurdu.Burada to be  kelimesi eslestirici metod olarak cevirdigim ingilizce (matcher) olarak adlandırılan metodlardandır Aynı sekilde kullanılmak üzere tanımlanmıs bircok matcher metodu vardır. in_role(&ldquo;&rdquo;) kelimesi ise testi yapılan sınıfta tanımlanmıs bir metoddur zira testini yaptıgımız baslıca elemanlardandır.Buna gore User sınıfı soyle tanımlnmıs olmalıdır.</p>
+
+<figure class='code'><figcaption><span>title:"user.rb"  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">class</span> <span class="nc">User</span>
+</span><span class='line'>      <span class="k">def</span> <span class="nf">in_role?</span><span class="p">(</span><span class="n">role</span><span class="p">)</span>
+</span><span class='line'>          <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Eşlestirici metodlar (Matchers)</h3>
+
+<p>rspec-expect metodu bircok hazır esleştirici metoda sahiptir.
+Her eslestirici metod <strong>expect(&hellip;).to</strong> ya da <strong>expect(&hellip;).not_to</strong>
+ile kullanılabilir.Ornegin;</p>
+
+<pre><code>expect(result).to eq(85)
+expect(list)not_to be_empty
+expect(pi).to &gt; 3
+</code></pre>
+
+<h4>Nesne ozdeşliği (be)</h4>
+
+<pre><code>expect(actual).to be(expected) 
+</code></pre>
+
+<p>Burada nesnelerin ozdeşiligi denetlenir.Yani actual nesnesi expected nesnesinin tıpkısı(identical) olmalıdır.</p>
+
+<h4>Nesne eşitliği (eq)</h4>
+
+<pre><code>expect(actual).to eq(expected) # actual == expected ise geçer
+</code></pre>
+
+<p>Bu metodda anlasılacagı uzere eşitlik kontrol edilir.</p>
+
+<pre><code>expect(actual).to eql(expected)
+expect(actual).to equal(expected)
+</code></pre>
+
+<p>metodları da eq ile aynı işlevi gorur.
+Not: &lsquo;expect&rsquo; metodu &lsquo;==&rsquo; operatorunu desteklemez.</p>
+
+<h4>Karşılastırmalar</h4>
+
+<pre><code>expect(actual).to be &gt;  expected
+expect(actual).to be &gt;= expected
+expect(actual).to be &lt;= expected
+expect(actual).to be &lt;  expected
+expect(actual).to be_between(minimum, maximum).inclusive
+expect(actual).to be_between(minimum, maximum).exclusive
+expect(actual).to match(/expression/)
+expect(actual).to be_within(delta).of(expected)
+expect(actual).to start_with expected
+expect(actual).to end_with expected
+</code></pre>
+
+<h3>Test yazarken kullanılan bazı yararlı ozellikler</h3>
+
+<figure class='code'><figcaption><span>title:"stack.rb" </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">class</span> <span class="nc">Stack</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="k">def</span> <span class="nf">initialize</span>
+</span><span class='line'>      <span class="vi">@store</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>     <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@store</span><span class="o">.</span><span class="n">push</span> <span class="n">x</span>
+</span><span class='line'>     <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="k">def</span> <span class="nf">pop</span>
+</span><span class='line'>      <span class="vi">@store</span><span class="o">.</span><span class="n">pop</span>
+</span><span class='line'>     <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="k">def</span> <span class="nf">peek</span>
+</span><span class='line'>      <span class="vi">@store</span><span class="o">.</span><span class="n">last</span>
+</span><span class='line'>     <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="k">def</span> <span class="nf">empty?</span>
+</span><span class='line'>      <span class="vi">@store</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>     <span class="k">end</span>
+</span><span class='line'>     <span class="k">def</span> <span class="nf">size</span>
+</span><span class='line'>       <span class="vi">@store</span><span class="o">.</span><span class="n">size</span>
+</span><span class='line'>     <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bu ozellikleri bir ornek üzerinde acıklamak istiyorum.Ornegin, yukarıda verdigimiz stack sınıfının düzgün calısıp calısmadıgını denetleyen test kodlarını yazmaya çalışalım.</p>
+
+<figure class='code'><figcaption><span>title:"stack_spec.rb"  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="nb">require</span> <span class="s1">&#39;stack&#39;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span> 
+</span><span class='line'>      <span class="n">it</span> <span class="s1">&#39;pushes value onto itself&#39;</span> <span class="k">do</span>
+</span><span class='line'>          <span class="n">stack</span> <span class="o">=</span> <span class="no">Stack</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>          <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>
+</span><span class='line'>          <span class="n">expect</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">it</span> <span class="s1">&#39;pops the last value that was pushed&#39;</span> <span class="k">do</span>
+</span><span class='line'>          <span class="n">stack</span> <span class="o">=</span> <span class="no">Stack</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>          <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>
+</span><span class='line'>          <span class="n">expect</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="mi">85</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ornege inceleyecek olursak <em>require</em> ile stack klasımızı çagirdık.Daha sonra <em>describe</em> bloguna calıstıgımız sınıfın adını tanımladık.<em>it</em> bloguna testimizin amacını yani neyi test ettigimizi tanımladık.Ardından yeni stack olusturup içine attigimiz sayıdan sonra stackin boyutunun 1 olmasını <strong>bekledik</strong>(expected).Ikinci <em>it</em> blogunda da benzer bir işlem yapılmış. Ardından terminale daha önce yazdıgımız gibi</p>
+
+<pre><code>rspec spec/lib/lib_spec.rb
+</code></pre>
+
+<p>yazarsak,</p>
+
+<p><img src="//emrullah-arsay.github.io/images/libspec1.jpg" alt="rspectest" /></p>
+
+<p>sonucunu elde ederiz.</p>
+
+<p>Ayrıca spec klasorundeki test dosyamızı &lsquo;_spec.rb&rsquo; seklinde isimlendirdiysek  sadece</p>
+
+<pre><code>rspec spec
+</code></pre>
+
+<p>komutunu calıstırararak aynı sonucu elde edebiliriz.Bu yontemle <em>spec</em> klasorundeki tüm test dosyalarıni calıstırmış oluruz.</p>
+
+<h4>Nested #describe</h4>
+
+<figure class='code'><figcaption><span>title:"Nested #describe"  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="nb">require</span> <span class="s1">&#39;stack&#39;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">describe</span> <span class="s1">&#39;#push&#39;</span> <span class="k">do</span>
+</span><span class='line'>          <span class="n">it</span> <span class="s1">&#39;pushes value onto itself&#39;</span> <span class="k">do</span>
+</span><span class='line'>              <span class="n">stack</span> <span class="o">=</span> <span class="no">Stack</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>              <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">expect</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="mi">1</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">describe</span> <span class="s1">&#39;#pop&#39;</span> <span class="k">do</span>
+</span><span class='line'>          <span class="n">it</span> <span class="s1">&#39;pops the last value that was pushed&#39;</span> <span class="k">do</span>
+</span><span class='line'>              <span class="n">stack</span> <span class="o">=</span> <span class="no">Stack</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>              <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">expect</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="mi">85</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yukarıdaki ornekte her test blogu için, hangi metod uzerinde test yapıldıgını belirtmek amacıyla describe blokları ile test edilen metodların adları tanımlanmıstır.</p>
+
+<h4>Refactoring</h4>
+
+<p>Ractoring yazdıgımız testlerde düzenlemeler yapmak ve gereksiz kodlardan kurtulmaktır.Ornegin yukarıdaki orneklerde herbir it blogunda <strong>stack = Stack.new</strong> kodu tekrarlanıyor.Bu fazlalalıktan kurtulmak için de, denek yani uzerine test yaptıgımız nesne anlamına gelen <strong>subject</strong> keywordunu kullanabiliriz.</p>
+
+<figure class='code'><figcaption><span>title:"subject keyword"  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="nb">require</span> <span class="s1">&#39;stack&#39;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">subject</span><span class="p">(</span><span class="ss">:stack</span><span class="p">)(</span><span class="no">Stack</span><span class="o">.</span><span class="n">new</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">describe</span> <span class="s1">&#39;#push&#39;</span> <span class="k">do</span>
+</span><span class='line'>          <span class="n">it</span> <span class="s1">&#39;pushes value onto itself&#39;</span> <span class="k">do</span>
+</span><span class='line'>              <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">expect</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="mi">1</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">describe</span> <span class="s1">&#39;#pop&#39;</span> <span class="k">do</span>
+</span><span class='line'>          <span class="n">it</span> <span class="s1">&#39;pops the last value that was pushed&#39;</span> <span class="k">do</span>
+</span><span class='line'>              <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">expect</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="mi">22</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4><em>let</em> ile initial value  tanımlama</h4>
+
+<p>Baslıktan da anlasıldığı üzere let anahatar kelimesi ile testimiz için baslangic degerleri girebiliyoruz.Önceki ornekte  her it blogunda stack'e atılan degerleri baslangıc degerleri olarak ekleyebiliriz.</p>
+
+<figure class='code'><figcaption><span>title:"let keyword"  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> 
+</span><span class='line'>  <span class="n">subject</span><span class="p">(</span><span class="ss">:stack</span><span class="p">)(</span><span class="no">Stack</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">initial_values</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:initial_values</span><span class="p">){</span><span class="o">[]</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">describe</span> <span class="s1">&#39;#push&#39;</span> <span class="k">do</span>
+</span><span class='line'>          <span class="n">it</span> <span class="s1">&#39;pushes value onto the stack&#39;</span> <span class="k">do</span>
+</span><span class='line'>              <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">85</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">expect</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span> <span class="mi">1</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<p>Iyi geceler arkadaslar.Bi yanlısım varsa lütfen düzeltin.Bende yeni ogreniyorum sonucta&hellip;</p>
+
+<h5>Kaynaklar</h5>
+
+<ol>
+<li><a href="http://www.tutorialspoint.com/rspec/rspec_hooks.htm">http://www.tutorialspoint.com/rspec/rspec_hooks.htm</a></li>
+<li><a href="https://www.youtube.com/watch?v=vvt3e4uUQ-E&amp;index=2&amp;list=PLq32xWf2bPRx_1SAVTsRf-FSkijGiY7w1">https://www.youtube.com/watch?v=vvt3e4uUQ-E&amp;index=2&amp;list=PLq32xWf2bPRx_1SAVTsRf-FSkijGiY7w1</a></li>
+<li><a href="https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers">https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers</a></li>
+<li><a href="http://blog.teamtreehouse.com/an-introduction-to-rspec">http://blog.teamtreehouse.com/an-introduction-to-rspec</a></li>
+<li><a href="http://blog.davidchelimsky.net/blog/2007/05/14/an-introduction-to-rspec-part-i/">http://blog.davidchelimsky.net/blog/2007/05/14/an-introduction-to-rspec-part-i/</a></li>
+<li><a href="http://kadertarlan.com/blog/2015/02/09/rspec-nedir/">http://kadertarlan.com/blog/2015/02/09/rspec-nedir/</a></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Cybele]]></title>
