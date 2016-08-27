@@ -4,7 +4,7 @@
   <title><![CDATA[emrullah]]></title>
   <link href="//emrullah-arsay.github.io/atom.xml" rel="self"/>
   <link href="//emrullah-arsay.github.io/"/>
-  <updated>2016-08-27T03:18:26+03:00</updated>
+  <updated>2016-08-27T03:25:25+03:00</updated>
   <id>//emrullah-arsay.github.io/</id>
   <author>
     <name><![CDATA[emrullah]]></name>
@@ -127,7 +127,7 @@ spec
     ├── books 
 </code></pre>
 
-<p>Deneme amacıyla herhangi bir klasorde *rspec &ndash;init * komutu ile rspec'i baslatıp içine olusturdugunuz lib/sample.rb dosyası için spec/lib/sample_spec.rb  dosyasını içine testlerinizi yazabilir,</p>
+<p>Deneme amacıyla olusturdugumuz rspectest klasorunde *rspec &ndash;init * komutu ile rspec'i baslatıp içine olusturdugumuz lib/sample.rb dosyası için testlerimizi spec/lib/sample_spec.rb  dosyasını içine yazabiliriz,</p>
 
 <pre><code>rspec spec/lib/sample_spec.rb 
 </code></pre>
