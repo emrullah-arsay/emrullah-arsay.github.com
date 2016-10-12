@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: //emrullah-arsay.github.io/sitemap.xml 
+Sitemap: //emrullaharsay.github.io/sitemap.xml 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rspec | emrullah]]></title>
-  <link href="//emrullah-arsay.github.io/blog/categories/rspec/atom.xml" rel="self"/>
-  <link href="//emrullah-arsay.github.io/"/>
-  <updated>2016-08-27T03:37:22+03:00</updated>
-  <id>//emrullah-arsay.github.io/</id>
+  <link href="//emrullaharsay.github.io/blog/categories/rspec/atom.xml" rel="self"/>
+  <link href="//emrullaharsay.github.io/"/>
+  <updated>2016-10-12T10:22:06+03:00</updated>
+  <id>//emrullaharsay.github.io/</id>
   <author>
     <name><![CDATA[emrullah]]></name>
     
@@ -15,16 +15,16 @@
   
   <entry>
     <title type="html"><![CDATA[RSpec 101]]></title>
-    <link href="//emrullah-arsay.github.io/blog/2016/08/26/rspec-101/"/>
+    <link href="//emrullaharsay.github.io/blog/2016/08/26/rspec-101/"/>
     <updated>2016-08-26T15:26:32+03:00</updated>
-    <id>//emrullah-arsay.github.io/blog/2016/08/26/rspec-101</id>
+    <id>//emrullaharsay.github.io/blog/2016/08/26/rspec-101</id>
     <content type="html"><![CDATA[<h3>RSpec'e Giris</h3>
 
 <p><a href="rspec.info">RSpec</a> ruby için yazılmış bir test aracıdır ve TDD mantığı kullanılarak uygulama geliştirme amacıyla kullanılır.</p>
 
 <p>Peki nedir bu TDD?Acılımı Test Driven Development olup teste dayalı geliştirme olarak çevirebiliceğimiz bir yazılım geliştirme metodudur.Teste Dayalı derken <a href="http://en.wikipedia.org/wiki/Kent_Beck">Kent Beck</a> abimiz cok ciddiymiş çünkü bu geliştirme yonteminde kod yazmadan once testleri yazıyoruz.Teste Dayalı Geliştirmenin işleyişini ise Red - Green - Refactor dongusu ile anlayabiliriz.</p>
 
-<div  align="center"><img src="//emrullah-arsay.github.io/images/rgr.png" alt="Smiley face" style="" ></div>
+<div  align="center"><img src="//emrullaharsay.github.io/images/rgr.png" alt="Smiley face" style="" ></div>
 
 
 <p><strong>Red</strong> : Ilk adımda testimizi yazıyoruz ve testi gecemiyoruz.Testi gecemiyoruz çünkü kural bu arkadaslar zaten daha kodu da yazmadık .Teste Dayalı Geliştirmenin altın kuralı, başarısız testler yazmadan,asla (uretim kodu) kod yazma imiş.</p>

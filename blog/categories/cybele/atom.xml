@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: cybele | emrullah]]></title>
-  <link href="//emrullah-arsay.github.io/blog/categories/cybele/atom.xml" rel="self"/>
-  <link href="//emrullah-arsay.github.io/"/>
-  <updated>2016-08-27T03:37:22+03:00</updated>
-  <id>//emrullah-arsay.github.io/</id>
+  <link href="//emrullaharsay.github.io/blog/categories/cybele/atom.xml" rel="self"/>
+  <link href="//emrullaharsay.github.io/"/>
+  <updated>2016-10-12T10:22:06+03:00</updated>
+  <id>//emrullaharsay.github.io/</id>
   <author>
     <name><![CDATA[emrullah]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to Cybele]]></title>
-    <link href="//emrullah-arsay.github.io/blog/2016/08/23/how-to-cybele-dot/"/>
+    <link href="//emrullaharsay.github.io/blog/2016/08/23/how-to-cybele-dot/"/>
     <updated>2016-08-23T20:58:13+03:00</updated>
-    <id>//emrullah-arsay.github.io/blog/2016/08/23/how-to-cybele-dot</id>
+    <id>//emrullaharsay.github.io/blog/2016/08/23/how-to-cybele-dot</id>
     <content type="html"><![CDATA[<p>Cybele is not an anatolian goddess, actually it is but we&rsquo;re not talking about her.We&rsquo;re talking about a rails gem.It&rsquo;s an
 awesome tool to start a new project.It has everything you need when you develop a professional website.In short, it is a starting template.</p>
 

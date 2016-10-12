@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[emrullah]]></title>
-  <link href="//emrullah-arsay.github.io/atom.xml" rel="self"/>
-  <link href="//emrullah-arsay.github.io/"/>
-  <updated>2016-08-27T03:37:22+03:00</updated>
-  <id>//emrullah-arsay.github.io/</id>
+  <link href="//emrullaharsay.github.io/atom.xml" rel="self"/>
+  <link href="//emrullaharsay.github.io/"/>
+  <updated>2016-10-12T10:22:06+03:00</updated>
+  <id>//emrullaharsay.github.io/</id>
   <author>
     <name><![CDATA[emrullah]]></name>
     
@@ -15,16 +15,16 @@
   
   <entry>
     <title type="html"><![CDATA[RSpec 101]]></title>
-    <link href="//emrullah-arsay.github.io/blog/2016/08/26/rspec-101/"/>
+    <link href="//emrullaharsay.github.io/blog/2016/08/26/rspec-101/"/>
     <updated>2016-08-26T15:26:32+03:00</updated>
-    <id>//emrullah-arsay.github.io/blog/2016/08/26/rspec-101</id>
+    <id>//emrullaharsay.github.io/blog/2016/08/26/rspec-101</id>
     <content type="html"><![CDATA[<h3>RSpec'e Giris</h3>
 
 <p><a href="rspec.info">RSpec</a> ruby için yazılmış bir test aracıdır ve TDD mantığı kullanılarak uygulama geliştirme amacıyla kullanılır.</p>
 
 <p>Peki nedir bu TDD?Acılımı Test Driven Development olup teste dayalı geliştirme olarak çevirebiliceğimiz bir yazılım geliştirme metodudur.Teste Dayalı derken <a href="http://en.wikipedia.org/wiki/Kent_Beck">Kent Beck</a> abimiz cok ciddiymiş çünkü bu geliştirme yonteminde kod yazmadan once testleri yazıyoruz.Teste Dayalı Geliştirmenin işleyişini ise Red - Green - Refactor dongusu ile anlayabiliriz.</p>
 
-<div  align="center"><img src="//emrullah-arsay.github.io/images/rgr.png" alt="Smiley face" style="" ></div>
+<div  align="center"><img src="//emrullaharsay.github.io/images/rgr.png" alt="Smiley face" style="" ></div>
 
 
 <p><strong>Red</strong> : Ilk adımda testimizi yazıyoruz ve testi gecemiyoruz.Testi gecemiyoruz çünkü kural bu arkadaslar zaten daha kodu da yazmadık .Teste Dayalı Geliştirmenin altın kuralı, başarısız testler yazmadan,asla (uretim kodu) kod yazma imiş.</p>
@@ -134,7 +134,7 @@ spec
 
 <p>komutu ile testlerimizi calıstırabilir ve rspec'in calısır durumda oldugunu gorebiliriz.</p>
 
-<p><img src="//emrullah-arsay.github.io/images/emptytest.jpg" alt="rspectest" /></p>
+<p><img src="//emrullaharsay.github.io/images/emptytest.jpg" alt="rspectest" /></p>
 
 <h3>RSpec Syntax</h3>
 
@@ -417,7 +417,7 @@ expect(actual).to end_with expected
 
 <p>yazarsak,</p>
 
-<p><img src="//emrullah-arsay.github.io/images/libspec1.jpg" alt="rspectest" /></p>
+<p><img src="//emrullaharsay.github.io/images/libspec1.jpg" alt="rspectest" /></p>
 
 <p>sonucunu elde ederiz.</p>
 
@@ -570,9 +570,9 @@ expect(actual).to end_with expected
   
   <entry>
     <title type="html"><![CDATA[How to Cybele]]></title>
-    <link href="//emrullah-arsay.github.io/blog/2016/08/23/how-to-cybele-dot/"/>
+    <link href="//emrullaharsay.github.io/blog/2016/08/23/how-to-cybele-dot/"/>
     <updated>2016-08-23T20:58:13+03:00</updated>
-    <id>//emrullah-arsay.github.io/blog/2016/08/23/how-to-cybele-dot</id>
+    <id>//emrullaharsay.github.io/blog/2016/08/23/how-to-cybele-dot</id>
     <content type="html"><![CDATA[<p>Cybele is not an anatolian goddess, actually it is but we&rsquo;re not talking about her.We&rsquo;re talking about a rails gem.It&rsquo;s an
 awesome tool to start a new project.It has everything you need when you develop a professional website.In short, it is a starting template.</p>
 
@@ -609,7 +609,7 @@ AWS_SECRET_ACCESS_KEY=
 <p>You can get detailed info about setting your local variables from <a href="http://railsapps.github.io/rails-environment-variables.html">here</a>.After that in your migration folder set your default values for <strong>is_active</strong> and
 <strong>time_zone</strong> variables in Admin and User models.Be sure that you do this changes before the <em>rake db:migrate</em> command.</p>
 
-<p><img src="//emrullah-arsay.github.io/images/pic2.jpg" alt="migratepic" /></p>
+<p><img src="//emrullaharsay.github.io/images/pic2.jpg" alt="migratepic" /></p>
 
 <p>After setting the migration file, change username and password in /config/settings.yml as you like.Then  in public folder run this command</p>
 
@@ -661,7 +661,7 @@ rake dev:seed
 
 <p>tadaaa</p>
 
-<p><img src="//emrullah-arsay.github.io/images/well.jpg" alt="welcomepage" /></p>
+<p><img src="//emrullaharsay.github.io/images/well.jpg" alt="welcomepage" /></p>
 
 <p>You can wonder its admin panel just using</p>
 
@@ -676,9 +676,9 @@ rake dev:seed
   
   <entry>
     <title type="html"><![CDATA[Second Day at Workshop]]></title>
-    <link href="//emrullah-arsay.github.io/blog/2016/08/01/second-day-at-workshop/"/>
+    <link href="//emrullaharsay.github.io/blog/2016/08/01/second-day-at-workshop/"/>
     <updated>2016-08-01T03:29:50+03:00</updated>
-    <id>//emrullah-arsay.github.io/blog/2016/08/01/second-day-at-workshop</id>
+    <id>//emrullaharsay.github.io/blog/2016/08/01/second-day-at-workshop</id>
     <content type="html"><![CDATA[<p>     We started to second day with simple html lesson.As all we know Html is a markup language using for websites.It stands for HyperText Markup Language and it is a milestone for  web pages because everything in the internet uses this language.All other languages or tools you know like php, .net, rails are just a tool for transforming our code to HTML.because of that knowing html is most important thing for a web developper.After we finished talking about html we passed on another tool we use in rails environment to transform our code to html.It is a gem called Haml.  
 </p>
 
@@ -1390,9 +1390,9 @@ appreciated for all my theacher's efforts and time that they spare from their ac
   
   <entry>
     <title type="html"><![CDATA[Hello Workshop]]></title>
-    <link href="//emrullah-arsay.github.io/blog/2016/07/30/hello-workshop/"/>
+    <link href="//emrullaharsay.github.io/blog/2016/07/30/hello-workshop/"/>
     <updated>2016-07-30T16:24:26+03:00</updated>
-    <id>//emrullah-arsay.github.io/blog/2016/07/30/hello-workshop</id>
+    <id>//emrullaharsay.github.io/blog/2016/07/30/hello-workshop</id>
     <content type="html"><![CDATA[<p> When I heard the workshop for the first time i thought it will be  a few simple classes and some 
 simple code samples and that's all.But that was not..In the contrary we've had condensed and mind   dazzling lessons from scracth to the end of the project till  publishing a web project.Did ı understand
 something is that's what i'm gonna trying to tell you now..</p>
@@ -1415,12 +1415,12 @@ matlab or else but when i learning ruby that was my first impression which i rea
 lot of things about ruby and rails framwork such as gems ,ruby toolbox, bundler,git,git-flow, association in rails class and more..Later we talked about rbenv which is a simple version mangement tool.He told us opening any version of ruby applications by using global and local keywords.</p>
 
 
-<p><img src="//emrullah-arsay.github.io/images/rbenv/rbnvlocal.jpg" width="600" height="400" title="pic" alt="picc"></p>
+<p><img src="//emrullaharsay.github.io/images/rbenv/rbnvlocal.jpg" width="600" height="400" title="pic" alt="picc"></p>
 
 <p> <p>Local keyword is changing your ruby version in your local folder.So you can use any version you l,ke
  in your project.</p></p>
 
-<p><img src="//emrullah-arsay.github.io/images/rbenv/rbnvglobal.jpg" width="600" height="400" title="pic" alt="picc"></p>
+<p><img src="//emrullaharsay.github.io/images/rbenv/rbnvglobal.jpg" width="600" height="400" title="pic" alt="picc"></p>
 
 <p>Global keyword is changing your ruby version completely thus you have to your new ruby version in 
 all ohter folder unless you use local keyword.</p>
@@ -1429,7 +1429,7 @@ all ohter folder unless you use local keyword.</p>
 <p> <p>And  there is another keyword which is shell.You can use this keyword when you want to change your
 ruby version only in the terminal you are using.</p></p>
 
-<p><img src="//emrullah-arsay.github.io/images/rbenv/rbnvshell.jpg" width="600" height="400" title="pic" alt="picc"></p>
+<p><img src="//emrullaharsay.github.io/images/rbenv/rbnvshell.jpg" width="600" height="400" title="pic" alt="picc"></p>
 
 <h4>Gems</h4>
 
@@ -1519,7 +1519,7 @@ using for produuction branch.It containes ready and working version of project a
  we use  tihs branch and make last changings such as changing the version number.</p>
  <h5>Hotfix Branches</h5>
  <p>When  we discover a critical error on the published version and we need to solve immediately, we use hotfix branches.We solve the probleö on these branches and we merge with both develop and master brancjes.</p>
- <img src="//emrullah-arsay.github.io/images/git-flow_480.png" width="600" height="400" title="pic" alt="picc"></p>
+ <img src="//emrullaharsay.github.io/images/git-flow_480.png" width="600" height="400" title="pic" alt="picc"></p>
 
 <h3>Installation of Git-flow</h3>
 
@@ -1909,9 +1909,9 @@ tiring but things i learn was really useful and remarkable.Thanks for the strugg
   
   <entry>
     <title type="html"><![CDATA[First Post]]></title>
-    <link href="//emrullah-arsay.github.io/blog/2016/07/30/first-post/"/>
+    <link href="//emrullaharsay.github.io/blog/2016/07/30/first-post/"/>
     <updated>2016-07-30T12:40:36+03:00</updated>
-    <id>//emrullah-arsay.github.io/blog/2016/07/30/first-post</id>
+    <id>//emrullaharsay.github.io/blog/2016/07/30/first-post</id>
     <content type="html"><![CDATA[<p>This is the Post.What did u expect??</p>
 ]]></content>
   </entry>
