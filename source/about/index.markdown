@@ -20,15 +20,15 @@ comments: false
 </ul>  
 
   <br>
- <a href="http://www.github.com/emrullah-arsay">
+ <a href="http://www.github.com/emrullaharsay">
 <img border="0" alt="git" src="/images/github.png" width="35" height="35"></a>
      
- <a href="http://www.github.com/emrullah-arsay">
+ <a href="http://www.github.com/emrullaharsay">
 <img border="0" alt="in" src="/images/in.png" width="35" height="35"></a>
 
  <a href="http://www.facebook.com/emr.arsay">
 <img border="0" alt="face" src="/images/fff.png" width="35" height="35"></a>
- <a href="http://www.github.com/emrullah-arsay">
+ <a href="http://www.github.com/emrullaharsay">
 <img border="0" alt="plus" src="/images/go.png" width="35" height="35"></a>
      
  
@@ -47,7 +47,7 @@ I occasionally watch some <a href="http://ocw.mit.edu/" target="_blank">MIT Open
 </p>
 <p>
 You can find me on <a href="http://www.facebook.com/emr.arsay" target="_blank">Facebook</a>  
- and check my projects on <a href="http://github.com/emrullah-arsay" target="_blank">GitHub</a>..From time to time I update a <a href="http://emrullah-arsay.github.io/" target="_blank">programming blog</a> where I write about interesting applications, text editors, Rails, Ruby, and other internet stuff.
+ and check my projects on <a href="http://github.com/emrullaharsay" target="_blank">GitHub</a>..From time to time I update a <a href="http://emrullaharsay.github.io/" target="_blank">programming blog</a> where I write about interesting applications, text editors, Rails, Ruby, and other internet stuff.
 </p>
 <br>
  <p> 

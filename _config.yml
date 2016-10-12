@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: //emrullah-arsay.github.io
+url: //emrullaharsay.github.io
 title: emrullah
 subtitle: on the rails
 author: emrullah
@@ -64,7 +64,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user: emrullah-arsay
+github_user: emrullaharsay
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
